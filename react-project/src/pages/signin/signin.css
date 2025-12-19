@@ -1,0 +1,145 @@
+.signup-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.login-header-simple {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  padding: 10px 0;
+}
+
+.header-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 70px;
+  width: auto;
+}
+
+.signup-content-wrapper {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.signup-form-side {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.signup-title {
+  color: green;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.signup-subtitle {
+  font-weight: 700;
+  color: #2d2e2f;
+  margin-bottom: 10px;
+}
+
+.signup-legal {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Name Row Grid */
+.name-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.name-row .form-input {
+  width: 50%;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.signup-submit-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.link-text {
+  color: #0073bb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.divider-container hr {
+  flex: 1;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.illustration-circle {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.illustration-circle img {
+  width: 100%;
+}
+
+.login-footer-text {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .signup-image-side { display: none; }
+}

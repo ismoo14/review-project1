@@ -1,0 +1,148 @@
+.business-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Header Styles */
+.business-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.biz-logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.biz-brand-logo { height: 60px; }
+
+.biz-logo-tag {
+  font-size: 18px;
+  color: #666;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.biz-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.phone-info {
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+}
+.phone-icon{
+    color: green;
+}
+
+.biz-nav-btn {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.login-white { border: 1px solid #ccc; color: #2d2e2f; }
+.signup-red { background: green; color: #fff; }
+
+/* Main Content Layout */
+.business-main-content {
+  display: flex;
+  flex: 1;
+}
+
+.biz-form-section {
+  flex: 1;
+  padding: 80px 60px;
+  max-width: 600px;
+}
+
+.biz-main-title {
+  font-size: 32px;
+  color: #2d2e2f;
+  margin-bottom: 10px;
+}
+
+.biz-subtitle { color: #6e7072; margin-bottom: 40px; }
+
+/* Custom Business Input */
+.biz-input-group {
+  position: relative;
+  margin-top: 20px;
+}
+
+.biz-input-label {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background: white;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #0073bb;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.biz-input-wrapper {
+  display: flex;
+  border: 2px solid #0073bb; /* Highlighted blue border */
+  border-radius: 4px;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+.biz-name-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+/* Image/Stats Section */
+.biz-image-section {
+  flex: 1;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.biz-stats-card {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-weight: 700;
+  font-size: 20px;
+  max-width: 350px;
+  margin-bottom: 40px;
+  z-index: 2;
+}
+
+.biz-illustration-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.biz-footnote {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-size: 10px;
+  color: #999;
+}

@@ -19,9 +19,9 @@ const Login = () => {
       <div className="login-content-wrapper">
         {/* Left Side: Form Section */}
         <div className="login-form-side">
-          <h2 className="login-title">Log in to Yelp</h2>
+          <h2 className="login-title">Log in to Ethio Mesob</h2>
           <p className="login-legal">
-            By continuing, you agree to Yelp’s <span className="link-text">Terms of Service</span> and acknowledge Yelp’s <span className="link-text">Privacy Policy</span>.
+            By continuing, you agree to Ethio Mesob <span className="link-text">Terms of Service</span> and acknowledge Yelp’s <span className="link-text">Privacy Policy</span>.
           </p>
 
           <div className="social-buttons">
@@ -29,14 +29,9 @@ const Login = () => {
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" />
               Continue with Google
             </button>
-            <button className="social-btn apple-btn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
-              Continue with Apple
-            </button>
           </div>
 
           <div className="divider-container">
-            <hr /> <span>OR</span> <hr />
           </div>
 
           <form className="login-form">
@@ -45,7 +40,7 @@ const Login = () => {
             <button type="submit" className="login-submit-btn">Log In</button>
           </form>
 
-          <p className="login-footer-link">Login via email link</p>
+        <p className='login-footer-link'>New to Habesha Mesob? <span>Sign in</span></p>
         </div>
 
         {/* Right Side: Circular Illustration */}

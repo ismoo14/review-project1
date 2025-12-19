@@ -1,0 +1,152 @@
+.biz-login-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Header Specifics */
+.business-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 40px;
+  border-bottom: 1px solid #ebebeb;
+  align-items: center;
+}
+
+.biz-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.biz-logo-img { height: 50px; }
+
+.biz-tag {
+  font-size: 18px;
+  color: #2d2e2f;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.biz-phone {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2e2f;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Form Card Layout */
+.biz-login-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.biz-login-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.biz-welcome-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2d2e2f;
+  margin-bottom: 15px;
+}
+
+.biz-legal-text {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.blue-link {
+  color: #0073bb;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Input Fields */
+.biz-credentials-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.biz-input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.forgot-pass-wrapper {
+  text-align: right;
+  margin-top: -5px;
+}
+
+.small-text { font-size: 14px; }
+
+.biz-continue-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Social Buttons & Divider */
+.biz-or-divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.biz-or-divider hr { flex: 1; border: 0; border-top: 1px solid #eee; }
+.biz-or-divider span { margin: 0 15px; }
+
+.biz-social-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.biz-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.biz-social-btn img { width: 20px; }
+
+.biz-signup-footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}

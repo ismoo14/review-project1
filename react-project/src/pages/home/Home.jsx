@@ -7,11 +7,14 @@ import Footer from '../../components/footer/Footer'
 import Recent from '../../components/recent/Recent'
 import Writereview from '../writereview/Writereview'
 import Login from '../login/Login'
+import Signin from '../signin/Signin'
+import Business from '../business/Business'
+import Businesslogin from '../businesslogin/Businesslogin'
 
 const Home = () => {
 return (
     <div className="page-wrapper-full-width">
-            <Login />
+            <Businesslogin />
         </div>
 )
 }

@@ -50,7 +50,7 @@
 }
 
 .login-title {
-  color: #d32323; /* Yelp Red */
+  color: green; /* Yelp Red */
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -137,7 +137,7 @@
 }
 
 .login-submit-btn {
-  background-color: #d32323;
+  background-color: green;
   color: white;
   border: none;
   padding: 14px;
@@ -154,11 +154,13 @@
 
 .login-footer-link {
   margin-top: 25px;
-  color: #0073bb;
+  color: black;
   font-size: 14px;
   cursor: pointer;
 }
-
+.login-footer-link span {
+    color: green;
+}
 /* 8. Circular Illustration Side */
 .login-image-side {
   flex: 1;
@@ -182,6 +184,7 @@
   height: auto;
   object-fit: cover;
 }
+
 
 /* 9. Responsive Rules */
 @media (max-width: 900px) {
