@@ -1,0 +1,186 @@
+.navbar-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  padding: 5px 0; /* Reduced from 15px to compensate for the larger logo */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1300px; /* Increased from 1100px to push items to the edges */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+/* Logo Styling */
+.nav-logo {
+  height: 85px; /* Increased from 65px */
+  width: auto;
+  display: block;
+  /* Negative margin can also help keep the border from moving */
+  margin: -5px 0;
+}
+
+/* Button Group Styling */
+.navbar-right {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-btn {
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700; /* Bold text like the image */
+  padding: 11px 19px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Log In Button: White with Border */
+.login-btn {
+  color: #2d2e2f;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+
+.login-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #bbb;
+}
+
+/* Sign Up Button: Red background */
+.signup-btn {
+  color: #ffffff;
+  background-color: green; /* Yelp-style Red */
+  border: 1px solid green;
+}
+
+.signup-btn:hover {
+  background-color: green;
+  border-color: green;
+}
+
+.write-review-hero {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.hero-container {
+  max-width: 1250px; /* Increased from 1100px to give more room */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;   /* Increased padding for better edges */
+  margin-top: 30px;
+  gap: 40px;
+}
+
+.hero-left {
+  flex: 1.2;
+  max-width: 580px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2d2e2f;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #6e7072;
+  margin-bottom: 30px;
+}
+
+/* Search Bar Wrapper */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-input-group {
+  display: flex;
+  flex: 1;
+  background: white;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  background-color: #ccc;
+}
+
+.business-input {
+  flex: 2;
+}
+
+.location-input {
+  flex: 1;
+}
+
+/* Search Button */
+.search-btn {
+  background-color: green; /* Yelp red color */
+  border: none;
+  padding: 0 15px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: green;
+}
+
+/* Image on the right */
+.hero-right {
+  flex: 0.8;         /* Give the image area slightly less priority */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image {
+  max-width: 490px;
+  height: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-right {
+    display: none; /* Hide image on mobile like the real site often does */
+  }
+  .search-bar-container {
+    flex-direction: column;
+  }
+  .divider {
+    display: none;
+  }
+}

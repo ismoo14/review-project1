@@ -1,0 +1,157 @@
+/* --- Wrapper and Title --- */
+.activity-section-wrapper {
+    background-color: white; /* Clean background */
+    padding: 50px 0;
+}
+
+.activity-section-wrapper .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block;
+}
+
+.activity-section-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center; /* Title centered as in the design */
+}
+
+/* --- Grid Layout for Cards --- */
+.activity-grid {
+    display: grid;
+    /* 3 equal columns for the review cards */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* --- Individual Card Styling --- */
+.activity-card {
+    background-color: rgb(245, 243, 243);
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- User Header --- */
+.user-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.user-action-text {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.user-name {
+    font-weight: 700;
+}
+
+.time-ago {
+    color: #999;
+    font-size: 12px;
+}
+
+/* --- Review Content Link Block --- */
+.review-link-block {
+    text-decoration: none;
+    color: inherit;
+    flex-grow: 1; /* Allows content block to expand */
+}
+
+.business-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0073bb;
+    margin: 5px 0;
+}
+
+.business-meta-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.star-rating .star-icon {
+    font-size: 16px !important;
+    color: #f15c00; /* Orange/Red for stars */
+}
+
+.star-rating .star-icon.empty {
+    color: #e0e0e0;
+}
+
+.category-text {
+    font-size: 14px;
+    color: #6a6a6a;
+    margin-left: 10px;
+}
+
+.review-photo {
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.review-snippet {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    /* Limit the snippet height/lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.read-more {
+    font-size: 14px;
+    color: #0073bb;
+    font-weight: 600;
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- Interaction Footer --- */
+.interaction-footer {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.interaction-icon-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.interaction-icon {
+    font-size: 18px !important;
+    color: #999;
+    cursor: pointer;
+}
+
+.interaction-icon:hover {
+    color: #0073bb;
+}

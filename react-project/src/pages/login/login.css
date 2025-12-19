@@ -1,0 +1,197 @@
+/* 1. Global Page Container */
+.login-page-container {
+  display: flex;
+  flex-direction: column; /* Stacks Header on top of Content */
+  align-items: center;
+  background-color: #fff;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 2. Header Section (Top Left) */
+.login-header-simple {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb; /* The subtle line from the design */
+  padding: 10px 0;
+}
+
+.header-container {
+  max-width: 1300px; /* Wider container pushes logo further left */
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 70px; /* Matches the larger logo request */
+  width: auto;
+  display: block;
+}
+
+/* 3. Main Content Wrapper (Form + Illustration) */
+.login-content-wrapper {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  gap: 100px; /* Spacing between form and circle */
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px; /* Space between header and form */
+}
+
+/* 4. Form Side Styling */
+.login-form-side {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  color: #d32323; /* Yelp Red */
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.login-legal {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.link-text {
+  color: #0073bb;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* 5. Social Buttons */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.social-btn:hover {
+  background-color: #f7f7f7;
+}
+
+.social-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* 6. OR Divider */
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.divider-container hr {
+  flex: 1;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.divider-container span {
+  margin: 0 10px;
+}
+
+/* 7. Input Fields */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-input {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline-color: #d32323;
+}
+
+.login-submit-btn {
+  background-color: #d32323;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-submit-btn:hover {
+  background-color: #bd1f1f;
+}
+
+.login-footer-link {
+  margin-top: 25px;
+  color: #0073bb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 8. Circular Illustration Side */
+.login-image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.illustration-circle {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8; /* Soft background inside the circle */
+}
+
+.illustration-circle img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 9. Responsive Rules */
+@media (max-width: 900px) {
+  .login-content-wrapper {
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 40px;
+  }
+  
+  .login-image-side {
+    display: none; /* Hides image on mobile like the real Yelp site */
+  }
+}

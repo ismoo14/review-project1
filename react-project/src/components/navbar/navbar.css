@@ -1,0 +1,192 @@
+.navbar {
+    width: 100%; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    background-color: transparent; 
+    border-bottom: none; 
+    z-index: 100; 
+    padding: 15px 0; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;  
+    padding-right: 40px; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.logo img {
+    height: 70px; 
+}
+.form {
+    flex-grow: 1; 
+    max-width: 400px; 
+    display: flex;
+    align-items: center;
+}
+
+.form form {
+    width: 100%;
+}
+
+.form .input-1 {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px;
+    outline: none; 
+}
+
+
+.business h5:hover {
+    color: #0073bb; 
+}
+
+
+.write button, .login button, .sign-Up button {
+    padding: 11px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+
+.write button {
+    background-color: transparent; 
+    color: #0073bb;
+    border: 1px solid #0073bb; 
+}
+
+.write button:hover {
+    background-color: #f2f7fb;
+}
+
+.login button {
+    background-color: green; 
+    color: white; 
+    border: 1px solid green; 
+}
+
+
+
+.nav-links-and-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sign-Up {
+    margin-left: 0; 
+}
+.sign-Up button {
+    background-color: green; 
+    color: white; 
+    border: 1px solid green; 
+}
+
+.sign-Up button:hover {
+    background-color: #c02d2a;
+    border-color: #c02d2a;
+}
+
+.business-dropdown-container {
+    position: relative; 
+    height: 100%; 
+}
+
+
+.business {
+    cursor: pointer;
+    padding: 13px 17px;
+    border-radius: 4px; 
+    margin: 0;
+}
+.business {
+    background-color: #f5f5f5;
+}
+.business h5 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    color: #333;
+    white-space: nowrap;
+    display: flex;
+    align-items: center; 
+    gap: 5px;
+    text-decoration: none;
+}
+.business:hover h5 {
+    color: #0073bb;
+}
+.business:hover .dropdown-arrow {
+    color: #0073bb;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    position: absolute; 
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1000;
+    min-width: 250px;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    font-size: 10px; 
+    color: #333;
+    transition: transform 0.2s ease-in-out; 
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    text-decoration: none !important;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+    color: #0073bb; 
+    text-decoration: none !important;
+}
+
+.dropdown-item .icon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.dropdown-menu hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+
+.dropdown-item.explore-link {
+    font-weight: bold;
+    color: #0073bb;
+    text-decoration: none !important;
+}
