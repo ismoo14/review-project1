@@ -21,15 +21,8 @@ const Login = () => {
         <div className="login-form-side">
           <h2 className="login-title">Log in to Ethio Mesob</h2>
           <p className="login-legal">
-            By continuing, you agree to Ethio Mesob <span className="link-text">Terms of Service</span> and acknowledge Yelp’s <span className="link-text">Privacy Policy</span>.
+            By continuing, you agree to Ethio Mesob <span className="link-text">Terms of Service</span> and acknowledge Habesh Mesob’s <span className="link-text">Privacy Policy</span>.
           </p>
-
-          <div className="social-buttons">
-            <button className="social-btn google-btn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" />
-              Continue with Google
-            </button>
-          </div>
 
           <div className="divider-container">
           </div>
@@ -40,7 +33,7 @@ const Login = () => {
             <button type="submit" className="login-submit-btn">Log In</button>
           </form>
 
-        <p className='login-footer-link'>New to Habesha Mesob? <span>Sign in</span></p>
+        <p className='login-footer-link'>New to Habesha Mesob? <Link to="/signin"> <span>Sign in</span></Link></p>
         </div>
 
         {/* Right Side: Circular Illustration */}

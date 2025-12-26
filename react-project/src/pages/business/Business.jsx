@@ -18,7 +18,7 @@ const Business = () => {
         <div className="biz-header-right">
           <div className="phone-info">
             <i className="phone-icon">📞</i>
-            <span>(877) 767-9357</span>
+            <span>+251991719305</span>
           </div>
           <Link to="/login" className="biz-nav-btn login-white">Log In</Link>
           <Link to="/signup" className="biz-nav-btn signup-red">Sign Up</Link>

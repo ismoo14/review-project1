@@ -17,7 +17,7 @@ const Businesslogin = () => {
         <div className="biz-header-right">
           <div className="biz-phone">
             <span className="phone-icon">🎧</span>
-            <span>(877) 767-9357</span>
+            <span>+251991719302</span>
           </div>
         </div>
       </header>
@@ -27,7 +27,7 @@ const Businesslogin = () => {
         <div className="biz-login-card">
           <h1 className="biz-welcome-title">Welcome back</h1>
           <p className="biz-legal-text">
-            By continuing, you agree to Yelp’s <span className="blue-link">Terms of Service</span> and acknowledge Yelp’s <span className="blue-link">Privacy Policy</span>.
+            By continuing, you agree to Habesh Mesob's <span className="blue-link">Terms of Service</span> and acknowledge Habesh Mesob’s <span className="blue-link">Privacy Policy</span>.
           </p>
 
           <form className="biz-credentials-form">
@@ -45,18 +45,8 @@ const Businesslogin = () => {
             <button type="submit" className="biz-continue-btn">Continue</button>
           </form>
 
-          <div className="biz-or-divider">
-          </div>
-
-          <div className="biz-social-stack">
-            <button className="biz-social-btn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" />
-              Continue with Google
-            </button>
-          </div>
-
           <p className="biz-signup-footer">
-            Don’t have an account? <span className="blue-link">Claim your business on Yelp</span> or continue with Google to create one.
+            Don’t have an account? <Link to="/business"> <span className="blue-link">Create One.</span> </Link>
           </p>
         </div>
       </main>

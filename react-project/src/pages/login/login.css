@@ -29,6 +29,7 @@
   height: 70px; /* Matches the larger logo request */
   width: auto;
   display: block;
+  margin-top: 7px;
 }
 
 /* 3. Main Content Wrapper (Form + Illustration) */
@@ -64,7 +65,7 @@
 }
 
 .link-text {
-  color: #0073bb;
+  color: green;
   cursor: pointer;
   text-decoration: none;
 }
@@ -183,6 +184,18 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+.biz-signup-footer a {
+    text-decoration: none !important;
+}
+
+
+.login-footer-link a {
+    text-decoration: none;
+}
+
+.login-footer-link a:hover {
+    border-bottom: solid 2px green;
 }
 
 

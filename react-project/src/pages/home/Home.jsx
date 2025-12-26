@@ -14,7 +14,11 @@ import Businesslogin from '../businesslogin/Businesslogin'
 const Home = () => {
 return (
     <div className="page-wrapper-full-width">
-            <Businesslogin />
+            <Navbar />
+            <Imageslider />
+            <Recent />
+            <Catagory />
+            <Footer />
         </div>
 )
 }

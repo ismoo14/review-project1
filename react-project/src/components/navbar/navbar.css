@@ -10,15 +10,18 @@
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;  
-    padding-right: 40px; 
+    width: 100%;             /* Changed from max-width to 100% to hit the edges */
+    padding: 0 40px;         /* Adds breathing room to the left and right edges */
     display: flex;
     align-items: center; 
-    justify-content: space-between; 
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    margin-right: 40px;      /* Spacing between logo and the search area */
 }
 
 .logo img {
@@ -73,16 +76,47 @@
 
 .login button {
     background-color: green; 
-    color: white; 
-    border: 1px solid green; 
+    color: white;
+    border: 2px solid green; 
+}
+.login button:hover {
+    background-color: #c02d2a;
+    border-color: #c02d2a;
+}
+.nav-middle-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;               /* Space between Form, Business link, and Review button */
+    flex: 1;                 /* Allows this section to grow and occupy the middle space */
+    justify-content: center; /* Keeps everything in the middle */
+}
+.form {
+    width: 100%;
+    max-width: 450px;        /* Matches the search bar width from your design */
+    display: flex;
 }
 
+/* --- Buttons Section (Far Right) --- */
+.nav-links-and-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 40px;       /* Pushes buttons away from middle content */
+}
+
+/* Utility to ensure buttons don't wrap */
+.sign-Up button {
+    white-space: nowrap;
+    background-color: green; /* Your specific branding color */
+    color: white;
+    border: none;
+}
 
 
 .nav-links-and-buttons {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
 }
 
 .sign-Up {
@@ -166,6 +200,9 @@
     color: #333;
     font-size: 14px;
     white-space: nowrap;
+}
+.dropdown-menu a {
+    text-decoration: none;
 }
 
 .dropdown-item:hover {

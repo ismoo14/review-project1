@@ -1,0 +1,271 @@
+.navbar-wrapper {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Container to center content and control max width */
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left side - Logo */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: block;
+}
+
+.brand-logo {
+  height: 70px;            /* Adjust based on your logo size */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Right side - Buttons */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.login-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+.signup-btn {
+  background-color: #28a745;   /* Green like in your screenshot */
+  color: white;
+  border: none;
+}
+
+.signup-btn:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+/* --- Global Layout --- */
+.review-layout {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    gap: 50px;
+    padding: 0 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* --- Left Column: Review Form --- */
+.review-main { 
+    flex: 2; 
+}
+
+.cafe-header { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 25px; 
+}
+
+.cafe-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #2d2e2f;
+}
+
+.cafe-header p {
+    margin: 4px 0 0 0;
+    color: #6e7072;
+}
+
+.cafe-icon { 
+    border-radius: 4px; 
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* --- THE STAR RATING BOX --- */
+.rating-box {
+    margin: 20px 0 30px 0;
+}
+
+.rating-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d2e2f;
+    margin-bottom: 12px;
+}
+
+.stars-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stars-row {
+    display: flex;
+    gap: 4px;
+}
+
+/* Red square buttons for stars */
+.star-box {
+    width: 40px;
+    height: 40px;
+    background-color: #e6e6e6; /* Default gray when unselected */
+    border: none;
+    border-radius: 4px; /* Rounded square look */
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+/* The specific red from your design */
+.star-box.active {
+    background-color: green; 
+}
+
+/* The dynamic text (Great, Good, etc.) */
+.rating-label {
+    font-size: 16px;
+    color: #2d2e2f;
+    font-weight: 400;
+}
+
+/* --- Input Area --- */
+.input-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.tags {
+    margin-bottom: 12px;
+}
+
+.tags span {
+    background: #f0f0f0;
+    padding: 6px 14px;
+    border-radius: 100px; /* Pill shape */
+    margin-right: 8px;
+    font-size: 13px;
+    color: #2d2e2f;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #2d2e2f;
+}
+
+.min-chars {
+    font-size: 13px;
+    color: #6e7072;
+    margin-top: 8px;
+}
+
+.post-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.post-btn:disabled {
+    background: #e6e6e6;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* --- Right Sidebar --- */
+.review-sidebar {
+    flex: 1;
+    border-left: 1px solid #eee;
+    padding-left: 30px;
+}
+
+.review-sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sidebar-rev-card {
+    margin-bottom: 25px;
+}
+
+.user-info { 
+    display: flex; 
+    gap: 10px; 
+    align-items: center; 
+    margin-bottom: 8px; 
+}
+
+.user-avatar { 
+    width: 32px; 
+    height: 32px; 
+    background: #eee; 
+    border-radius: 4px; 
+    display: grid; 
+    place-items: center;
+    font-size: 18px;
+}
+
+.rev-date { font-size: 12px; color: #6e7072; }
+.mini-stars { color: #f43939; margin: 4px 0; font-size: 14px; }
+.rev-preview { font-size: 14px; line-height: 1.5; color: #2d2e2f; }
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}

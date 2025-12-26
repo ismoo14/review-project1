@@ -1,186 +1,244 @@
 .navbar-wrapper {
-  width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #ebebeb;
-  padding: 5px 0; /* Reduced from 15px to compensate for the larger logo */
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Container to center content and control max width */
 .navbar-container {
-  max-width: 1300px; /* Increased from 1100px to push items to the edges */
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  justify-content: space-between;
 }
 
-/* Logo Styling */
-.nav-logo {
-  height: 85px; /* Increased from 65px */
-  width: auto;
+/* Left side - Logo */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
   display: block;
-  /* Negative margin can also help keep the border from moving */
-  margin: -5px 0;
 }
 
-/* Button Group Styling */
+.brand-logo {
+  height: 50px;            /* Adjust based on your logo size */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Right side - Buttons */
 .navbar-right {
   display: flex;
-  gap: 26px;
   align-items: center;
+  gap: 12px;
 }
 
 .nav-btn {
-  text-decoration: none;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 700; /* Bold text like the image */
-  padding: 11px 19px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
   transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
-/* Log In Button: White with Border */
 .login-btn {
-  color: #2d2e2f;
   background-color: transparent;
-  border: 1px solid #ccc;
+  color: #333;
+  border: 1px solid #ddd;
 }
 
 .login-btn:hover {
   background-color: #f5f5f5;
-  border-color: #bbb;
+  border-color: #ccc;
 }
 
-/* Sign Up Button: Red background */
 .signup-btn {
-  color: #ffffff;
-  background-color: green; /* Yelp-style Red */
-  border: 1px solid green;
+  background-color: #28a745;   /* Green like in your screenshot */
+  color: white;
+  border: none;
 }
 
 .signup-btn:hover {
-  background-color: green;
-  border-color: green;
+  background-color: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
 }
-
-.write-review-hero {
-  padding: 80px 0;
-  background-color: #fff;
+/* General layout */
+.page-wrapper {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
 }
 
 .hero-container {
-  max-width: 1250px; /* Increased from 1100px to give more room */
-  margin: 0 auto;
   display: flex;
+  align-items: flex-start;        /* Align both sides to the top */
   justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;   /* Increased padding for better edges */
-  margin-top: 30px;
-  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  gap: 60px;
 }
 
 .hero-left {
-  flex: 1.2;
-  max-width: 580px;
+  flex: 1;
+  min-width: 0;                   /* Allows flex child to shrink if needed */
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-title {
   font-size: 36px;
-  font-weight: 700;
-  color: #2d2e2f;
   margin-bottom: 12px;
 }
 
 .hero-subtitle {
+  color: #666;
+  margin-bottom: 40px;
   font-size: 18px;
-  color: #6e7072;
-  margin-bottom: 30px;
 }
 
-/* Search Bar Wrapper */
+.hero-right {
+  flex-shrink: 0;                 /* CRITICAL: Prevents the image side from shrinking */
+  align-self: flex-start;
+}
+
+.hero-image {
+  max-width: 100%;
+  width: 500px;                   /* Optional: set a preferred fixed width */
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Search Bar */
 .search-bar-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .search-input-group {
   display: flex;
+  align-items: flex-start;
   flex: 1;
-  background: white;
-  align-items: center;
+  gap: 12px;
+}
+
+.business-input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .search-input {
+  padding: 14px 16px;
+  font-size: 18px;
   border: none;
-  padding: 15px 20px;
-  font-size: 16px;
   outline: none;
-  width: 100%;
+  background: transparent;
+}
+
+.business-input {
+  min-width: 300px;
+}
+
+.location-input {
+  width: 220px;
+  border-left: 1px solid #ddd;
+  padding-left: 16px;
 }
 
 .divider {
   width: 1px;
-  height: 30px;
-  background-color: #ccc;
+  background: #ddd;
+  align-self: stretch;
 }
 
-.business-input {
-  flex: 2;
-}
-
-.location-input {
-  flex: 1;
-}
-
-/* Search Button */
 .search-btn {
-  background-color: green; /* Yelp red color */
+  background: green;
   border: none;
-  padding: 0 15px;
-  height: 50px;
+  border-radius: 8px;
+  padding: 10px 13px;
+  cursor: pointer;
+  margin-left: -15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  margin-top: 5px;
 }
 
 .search-btn:hover {
-  background-color: green;
+  background: #b51c1c;
 }
 
-/* Image on the right */
-.hero-right {
-  flex: 0.8;         /* Give the image area slightly less priority */
+/* Suggestions List - NO absolute positioning, flows naturally */
+.suggestions-list {
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.suggestion-item {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 12px;
 }
 
-.hero-image {
-  max-width: 490px;
-  height: auto;
+.suggestion-item:hover {
+  background: #f9f9f9;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 850px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-right {
-    display: none; /* Hide image on mobile like the real site often does */
-  }
-  .search-bar-container {
-    flex-direction: column;
-  }
-  .divider {
-    display: none;
-  }
+.suggestion-item:last-child {
+  border-bottom: none;
 }
+
+.item-image-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #eee;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.item-location {
+  font-size: 14px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Navbar styles (keep your existing ones or add) */
+.navbar-wrapper { /* ... your existing styles */ }

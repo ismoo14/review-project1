@@ -20,7 +20,7 @@
   text-decoration: none;
 }
 
-.biz-brand-logo { height: 60px; }
+.biz-brand-logo { height: 60px; margin-top: 5px; }
 
 .biz-logo-tag {
   font-size: 18px;
@@ -52,7 +52,11 @@
   border-radius: 4px;
   font-size: 14px;
 }
-
+.biz-nav-btn:hover {
+    background-color: #c02d2a;
+    border-color: #c02d2a;
+    color: white;
+}
 .login-white { border: 1px solid #ccc; color: #2d2e2f; }
 .signup-red { background: green; color: #fff; }
 

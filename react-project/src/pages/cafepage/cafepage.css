@@ -1,0 +1,316 @@
+/* --- Global Styles --- */
+.profile-page {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #2d2e2f;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.navbar-wrapper {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.signup-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+/* --- PHOTO BANNER --- */
+.photo-banner {
+  height: 400px;
+  position: relative;
+  background: #000;
+}
+
+.photo-grid { display: flex; height: 100%; }
+
+.banner-img {
+  width: 33.333%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  border-right: 2px solid #fff;
+}
+
+.business-header-info {
+  position: absolute;
+  bottom: 30px;
+  left: 60px;
+  color: white;
+  z-index: 10;
+}
+
+.biz-name { font-size: 42px; font-weight: 800; margin: 0 0 8px 0; }
+.rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.stars-mini { color: #f43939; font-size: 20px; }
+.review-count { font-weight: 600; }
+.status.closed { color: #28a745; font-weight: bold; margin-right: 5px; }
+
+/* --- ACTION BAR --- */
+.action-bar {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+}
+.status-raw{
+  margin-left: 19px;
+}
+
+
+.write-review-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.meta-tags{
+  margin-bottom: 10px;
+}
+
+.action-secondary {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- MAIN LAYOUT --- */
+/* --- MAIN LAYOUT --- */
+/* --- MAIN LAYOUT --- */
+.main-content-container {
+  max-width: 1270px;
+  margin: 40px auto;
+  display: flex;
+  gap: 60px;
+  padding: 0 20px;
+  align-items: flex-start; /* This is key - prevents stretching */
+}
+
+/* Left column */
+.left-column {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Right column */
+.right-column {
+  width: 350px;
+  flex-shrink: 0;
+  align-self: flex-start; /* Prevents the column from stretching */
+}
+
+/* THE STICKY ELEMENT - apply directly to the location card or a wrapper */
+.location-card.tall-card {
+  position: sticky;
+  top: 110px; /* Adjust this value: navbar height (~100px) + a little margin. Try 100px, 110px, or 120px */
+  z-index: 40;
+  align-self: flex-start; /* Extra safety */
+}
+
+/* Optional: subtle shadow when stuck */
+.location-card.tall-card {
+  transition: box-shadow 0.3s ease;
+}
+.location-card.tall-card.stuck {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SECTION 1: CLICKABLE MENU (MANUAL) --- */
+.clickable-menu-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.clickable-viewport {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.clickable-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.menu-cat-card { width: 200px; flex-shrink: 0; text-align: center; }
+.menu-cat-card img { width: 100%; height: 140px; border-radius: 12px; object-fit: cover; border: 1px solid #eee; }
+
+.slider-nav-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.prev { left: -22px; }
+.next { right: -22px; }
+
+.section-divider { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
+
+/* --- SECTION 2: POPULAR DISHES (AUTO-SLIDE) --- */
+.auto-slider-wrapper { position: relative; width: 100%; padding: 20px 0; overflow: hidden; }
+.dishes-slider { display: flex; width: 100%; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.slide-track { display: flex; gap: 16px; width: max-content; animation: scroll-smooth 15s linear infinite; will-change: transform; }
+.slide-track:hover { animation-play-state: paused; }
+
+.dish-card { width: 240px; flex-shrink: 0; border: 1px solid #e6e6e6; border-radius: 8px; background: #fff; overflow: hidden; }
+.dish-img-wrapper { position: relative; height: 160px; }
+.dish-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.dish-price { position: absolute; top: 10px; right: 10px; background: #28a745; color: white; padding: 3px 8px; border-radius: 4px; font-weight: 700; font-size: 14px; }
+
+@keyframes scroll-smooth {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 8px)); }
+}
+
+/* --- SECTION 3: REVIEWS (NEW) --- */
+.reviews-container { margin-top: 20px;}
+.review-card { gap: 24px; padding: 30px 0; border-bottom: 1px solid #918d8dff; }
+
+.review-sidebar { width: 180px; flex-shrink: 0; }
+.user-name { font-weight: 700; margin: 0; font-size: 16px; }
+.elite-tag { background: #d32323; color: white; font-size: 10px; padding: 1px 4px; border-radius: 2px; vertical-align: middle; }
+.user-location { font-size: 14px; font-weight: bold; margin: 2px 0; }
+.user-stats { font-size: 12px; color: #6e7072; display: flex; gap: 8px; margin-top: 4px; }
+
+.review-main { flex: 1; }
+.review-rating-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.stars-red { color: #f43939; font-size: 18px; letter-spacing: 2px; }
+.review-date { color: #6e7072; font-size: 14px; }
+.review-text {
+  line-height: 1.5;
+  font-size: 16px;
+  color: #2d2e2f;
+  margin-bottom: 20px;
+  
+  /* SHORT LINE LOGIC */
+  max-width: 600px;           /* Limits the width so lines stay short */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+
+  /* 4-Line Clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.review-photo-attachment { position: relative; width: 320px; border-radius: 8px; overflow: hidden; }
+.review-photo-attachment img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.photo-label { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 8px 12px; font-size: 13px; font-weight: bold; }
+
+/* --- RIGHT COLUMN (STICKY MAP) --- */
+/* Makes the contact section roomier to match the taller map */
+.location-card.tall-card .contact-details {
+  padding: 25px 10px; /* Increased vertical padding */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds more space between phone, website, and address */
+}
+
+/* Ensures the sticky wrapper doesn't jump */
+
+
+.location-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-details { padding: 16px; }
+.contact-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.contact-item:last-child { border-bottom: none; }
+.contact-item a { color: #0073bb; text-decoration: none; font-weight: 600; font-size: 14px; }
+.directions p { margin: 4px 0 0 0; font-size: 13px; color: #6e7072; }
+.icon { font-size: 18px; }
+.user-avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px; /* Matches the square-ish look in your screenshot */
+  object-fit: cover;
+}
+
+
+
+.elite-tag {
+  background: green;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin-left: 5px;
+}

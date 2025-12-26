@@ -19,18 +19,11 @@ const Signin = () => {
         
         {/* Left Side: Sign Up Form */}
         <div className="signup-form-side">
-          <h2 className="signup-title">Sign Up for Yelp</h2>
+          <h2 className="signup-title">Sign Up for Habesh Mesob</h2>
           <p className="signup-subtitle">Connect with great local businesses</p>
           <p className="signup-legal">
             By continuing, you agree to Yelp’s <span className="link-text">Terms of Service</span> and acknowledge Yelp’s <span className="link-text">Privacy Policy</span>.
           </p>
-
-          <div className="social-buttons">
-            <button className="social-btn google-btn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" />
-              Continue with Google
-            </button>
-          </div>
 
           <div className="divider-container">
           </div>
@@ -49,7 +42,7 @@ const Signin = () => {
           </form>
 
           <p className="login-footer-text">
-            Already on Yelp? <Link to="/login" className="link-text">Log in</Link>
+            Already on Habesh Mesob? <Link to="/login" className="link-text">Log in</Link>
           </p>
         </div>
 
