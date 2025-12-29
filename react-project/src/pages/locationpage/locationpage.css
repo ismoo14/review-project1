@@ -1,0 +1,121 @@
+/* Navbar Styling */
+.navbar-wrapper {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.brand-logo {
+    height: 50px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn {
+    background: transparent;
+    border: 1px solid #333;
+}
+
+.signup-btn {
+    background: #008000;
+    color: white;
+    border: none;
+}
+
+/* Results Layout */
+.results-container {
+    display: flex;
+    align-items: flex-start; /* CRITICAL: Prevents the map from stretching to full height */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Left Side: Scrollable */
+.list-side {
+    flex: 1.5;
+}
+
+.results-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cafe-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.cafe-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.image-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.cafe-info h3 {
+    margin: 0 0 10px 0;
+    color: #0073bb;
+}
+
+.stars {
+    color: #f1c40f;
+    margin-bottom: 8px;
+}
+
+.location-text {
+    font-weight: bold;
+    color: #666;
+}
+
+.description {
+    font-style: italic;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Right Side: Sticky Map */
+.map-side {
+    flex: 1;
+    position: sticky; 
+    top: 100px; /* Distance from the top of the window */
+    height: calc(100vh - 120px); /* Ensures the map fills the visible screen */
+    z-index: 10;
+}
+
+.sticky-map {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}

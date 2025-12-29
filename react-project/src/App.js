@@ -9,6 +9,7 @@ import Login from "./pages/login/Login"
 import Signin from "./pages/signin/Signin"
 import Reviewpage from "./pages/reviewpage/Reviewpage";
 import Cafepage from "./pages/cafepage/Cafepage";
+import Locationpage from "./pages/locationpage/Locationpage";
 
 function App() {
   
@@ -46,6 +47,10 @@ function App() {
     {
       path: "/",
       element: <Home />
+    },
+    {
+      path: "/locationpage",
+      element: <Locationpage />
     },
     
   ])

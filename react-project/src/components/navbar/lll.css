@@ -10,91 +10,33 @@
 }
 
 .container {
-    width: 100%;
-    /* FAR RIGHT AND LEFT SPACE: Adjust 60px to your liking */
-    padding: 0 60px; 
+    width: 100%;             /* Changed from max-width to 100% to hit the edges */
+    padding: 0 40px;         /* Adds breathing room to the left and right edges */
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    /* SPACE BETWEEN SECTIONS: Small gap for a tighter look */
-    gap: 18px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-top: 7px;     /* Spacing between logo and the search area */
+    margin-top: 7px;
+    margin-right: 40px;      /* Spacing between logo and the search area */
 }
 
 .logo img {
     height: 70px; 
 }
 .form {
-    flex-grow: 3;
-    max-width: 1000px; /* Keeps the search bar from becoming too wide */
+    flex-grow: 1; 
+    max-width: 400px; 
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .form form {
     width: 100%;
 }
-
-.search-bar-pill {
-    display: flex;
-    align-items: center;
-    background: #ffffff;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 100%;
-    height: 48px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.input-group {
-    flex: 1;
-    padding: 0 20px;
-}
-
-.input-group input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    color: #333;
-}
-
-.search-divider {
-    width: 1px;
-    height: 29px;
-    background-color: #ddd;
-}
-.logo, .nav-right-content {
-    flex-shrink: 0; /* Ensures the logo and buttons stay their original size */
-}
-.search-icon-btn {
-    background-color: green;
-    border: none;
-    width: 65px;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-right-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.search-icon-btn:hover {
-    background-color: #006400;
-}
-
-
 
 .form .input-1 {
     width: 100%;
@@ -112,17 +54,13 @@
 
 
 .write button, .login button, .sign-Up button {
-    padding: 10px 15px;
+    padding: 11px 20px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s;
     white-space: nowrap;
-}
-
-.business-dropdown-container, .write, .login, .sign-Up {
-    display: flex;
-    align-items: center; /* Forces buttons to align with the form height */
 }
 
 
