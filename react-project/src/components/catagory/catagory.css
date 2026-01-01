@@ -1,6 +1,7 @@
 .category-section-wrapper {
     padding: 40px 0; 
-    background-color: #f5f5f5; 
+    background-color: white; 
+    margin-bottom: 50px;
 }
 
 .category-section-wrapper .container {
@@ -12,7 +13,7 @@
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 50px;
+    gap: 60px;
 }
 .section-title {
     font-size: 35px;

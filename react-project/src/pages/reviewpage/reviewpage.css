@@ -63,7 +63,7 @@
 }
 
 .signup-btn {
-  background-color: #28a745;   /* Green like in your screenshot */
+  background-color: #28a745; 
   color: white;
   border: none;
 }
@@ -141,9 +141,9 @@
 .star-box {
     width: 40px;
     height: 40px;
-    background-color: #e6e6e6; /* Default gray when unselected */
+    background-color: #e6e6e6; 
     border: none;
-    border-radius: 4px; /* Rounded square look */
+    border-radius: 4px;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
@@ -181,7 +181,7 @@
 .tags span {
     background: #f0f0f0;
     padding: 6px 14px;
-    border-radius: 100px; /* Pill shape */
+    border-radius: 100px;
     margin-right: 8px;
     font-size: 13px;
     color: #2d2e2f;
@@ -260,9 +260,18 @@ textarea:focus {
     font-size: 18px;
 }
 
-.rev-date { font-size: 12px; color: #6e7072; }
-.mini-stars { color: #f43939; margin: 4px 0; font-size: 14px; }
-.rev-preview { font-size: 14px; line-height: 1.5; color: #2d2e2f; }
+.rev-date { font-size:
+    12px; 
+    color: #6e7072; 
+}
+.mini-stars { color: #f43939; 
+    margin: 4px 0; 
+    font-size: 14px; 
+}
+.rev-preview { font-size: 14px; 
+    line-height: 1.5; 
+    color: #2d2e2f; 
+}
 
 hr {
     border: 0;

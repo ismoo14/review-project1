@@ -22,7 +22,7 @@ const Signin = () => {
           <h2 className="signup-title">Sign Up for Habesh Mesob</h2>
           <p className="signup-subtitle">Connect with great local businesses</p>
           <p className="signup-legal">
-            By continuing, you agree to Yelp’s <span className="link-text">Terms of Service</span> and acknowledge Yelp’s <span className="link-text">Privacy Policy</span>.
+            By continuing, you agree to Habesh Mesob’s <span className="link-text">Terms of Service</span> and acknowledge Habesh Mesob’s <span className="link-text">Privacy Policy</span>.
           </p>
 
           <div className="divider-container">

@@ -6,7 +6,6 @@ import logo from '../../assets/logo.png';
 const Businesslogin = () => {
   return (
     <div className="biz-login-wrapper">
-      {/* Business Header */}
       <header className="business-header">
         <div className="biz-header-left">
           <Link to="/" className="biz-logo-link">
@@ -22,7 +21,6 @@ const Businesslogin = () => {
         </div>
       </header>
 
-      {/* Centered Login Content */}
       <main className="biz-login-main">
         <div className="biz-login-card">
           <h1 className="biz-welcome-title">Welcome back</h1>

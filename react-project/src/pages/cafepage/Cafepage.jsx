@@ -12,14 +12,11 @@ import pic3 from '../../assets/pic-3.jpg';
 import img5 from '../../assets/img-5.jpg';
 import img6 from '../../assets/img-6.jpg';
 import img7 from '../../assets/img-7.jpg';
-
 import { useLocation, Link } from 'react-router-dom';
 
 const Cafepage = () => {
   const location = useLocation();
   const menuSliderRef = useRef(null);
-
-  // Manual scroll logic for Top Menu
   const scrollMenu = (direction) => {
     if (menuSliderRef.current) {
       const { scrollLeft, clientWidth } = menuSliderRef.current;
@@ -62,7 +59,7 @@ const Cafepage = () => {
       rating: 4,
       date: "Sep 25, 2025",
       text: "Pulled up for a friend's birthday dinner. The restaurant is located in a strip mall with ample parking and has brightly colored walls and beaded curtains that make it feel very private. Food was delicious - heavier than expected, though well-seasoned and hearty.",
-      dishImg: img1, // Replace with your actual path
+      dishImg: img1,
       dishName: "Chicken stir fry"
     },
     {
@@ -74,7 +71,7 @@ const Cafepage = () => {
       rating: 4,
       date: "Sep 25, 2025",
       text: "Pulled up for a friend's birthday dinner. The restaurant is located in a strip mall with ample parking and has brightly colored walls and beaded curtains that make it feel very private. Food was delicious - heavier than expected, though well-seasoned and hearty.",
-      dishImg: img2, // Replace with your actual path
+      dishImg: img2, 
       dishName: "Chicken stir fry"
     },
     {
@@ -86,10 +83,9 @@ const Cafepage = () => {
       rating: 4,
       date: "Sep 25, 2025",
       text: "Pulled up for a friend's birthday dinner. The restaurant is located in a strip mall with ample parking and has brightly colored walls and beaded curtains that make it feel very private. Food was delicious - heavier than expected, though well-seasoned and hearty.",
-      dishImg: img3, // Replace with your actual path
+      dishImg: img3, 
       dishName: "Chicken stir fry"
     },
-    // You can duplicate this object to test scrolling
   ];
 
   return (
@@ -138,7 +134,11 @@ const Cafepage = () => {
 
       {/* ACTION BAR */}
       <div className="action-bar">
-        <button className="write-review-btn">★ Write a review</button>
+        <Link to="/writereveiw">
+            <button type="button" className="write-review-btn">
+                  ★ Write a review
+            </button>
+          </Link>
       </div>
 
       {/* MAIN CONTENT */}

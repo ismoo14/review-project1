@@ -29,9 +29,10 @@ const Reviewpage = () => {
   };
 
   const recentReviews = [
-    { id: 1, name: "Jeylin M.", date: "Dec 2, 2025", text: "The service is excellent, they are always very attentive...", stars: 5 },
-    { id: 2, name: "Amy K.", date: "Dec 20, 2025", text: "Located in financial district San Francisco, this is one of the best places...", stars: 4 },
-    { id: 3, name: "Jeylin M.", date: "Dec 2, 2025", text: "The service is excellent...", stars: 5 },
+    { id: 1, name: "Rahmet M.", date: "Dec 2, 2023", text: "The service is excellent, they are always very attentive...", stars: 5 },
+    { id: 2, name: "Ahmed K.", date: "jan 20, 2025", text: "Located in Addis Ababa, this is one of the best places...", stars: 3 },
+    { id: 3, name: "Siham M.", date: "Apr 2, 2025", text: "The service is excellent...", stars: 5 },
+    { id: 4, name: "Ismail A.", date: "mar 2, 2024", text: "Family firendly returant", stars: 4 },
   ];
 
   return (
@@ -102,8 +103,8 @@ const Reviewpage = () => {
             onChange={(e) => setReviewText(e.target.value)}
           />
           <p className="min-chars">
-            {reviewText.length < 85 
-              ? `Reviews need to be at least 85 characters. You need ${85 - reviewText.length} more.` 
+            {reviewText.length < 75 
+              ? `Reviews need to be at least 75 characters. You need ${75 - reviewText.length} more.` 
               : "Minimum length reached!"}
           </p>
         </div>

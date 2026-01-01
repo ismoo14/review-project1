@@ -1,6 +1,6 @@
 /* --- Wrapper and Title --- */
 .activity-section-wrapper {
-    background-color: white; /* Clean background */
+    background-color: white; 
     padding: 50px 0;
 }
 
@@ -18,14 +18,14 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 30px;
-    text-align: center; /* Title centered as in the design */
+    text-align: center;
 }
 
 /* --- Grid Layout for Cards --- */
 .activity-grid {
     display: grid;
-    /* 3 equal columns for the review cards */
-    grid-template-columns: repeat(3, 1fr); 
+    /* This 'repeat' logic is better for responsiveness */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     gap: 30px;
 }
 
@@ -75,12 +75,12 @@
 .review-link-block {
     text-decoration: none;
     color: inherit;
-    flex-grow: 1; /* Allows content block to expand */
+    flex-grow: 1;
 }
 
 .business-name {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 570;
     color: green;
     margin: 5px 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -94,7 +94,7 @@
 
 .star-rating .star-icon {
     font-size: 16px !important;
-    color: #f15c00; /* Orange/Red for stars */
+    color: #f15c00;
 }
 
 .star-rating .star-icon.empty {
@@ -120,7 +120,6 @@
     font-size: 14px;
     color: #333;
     margin: 0;
-    /* Limit the snippet height/lines */
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -156,4 +155,49 @@
 
 .interaction-icon:hover {
     color: #0073bb;
+}
+
+
+@media (max-width: 1024px) {
+    .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .activity-section-title {
+        font-size: 28px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    .activity-section-wrapper {
+        padding: 30px 0;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+
+    .activity-section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .activity-card {
+        padding: 20px; /* More breathing room on mobile */
+    }
+
+    .review-photo {
+        height: 180px; /* Slightly taller photos look better on mobile */
+    }
+}
+
+/* Hover effects for a better feel */
+.activity-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }

@@ -7,7 +7,6 @@ import bussimg from '../../assets/buss-img.svg'
 const Business = () => {
   return (
     <div className="business-page-wrapper">
-      {/* Detailed Header for Business */}
       <header className="business-header">
         <div className="biz-header-left">
           <Link to="/" className="biz-logo-container">
@@ -26,7 +25,6 @@ const Business = () => {
       </header>
 
       <main className="business-main-content">
-        {/* Left Side: Onboarding Form */}
         <section className="biz-form-section">
           <h1 className="biz-main-title">Hello! Let’s start with your business name!</h1>
           <p className="biz-subtitle">Search or add your business name.</p>
@@ -44,13 +42,11 @@ const Business = () => {
           </div>
         </section>
 
-        {/* Right Side: Large Illustration with Stats */}
         <section className="biz-image-section">
           <div className="biz-stats-card">
-            <p>An average of 2.5 million people visit Yelp each day¹</p>
+            <p> people can find and visit you using Habesh Mesob¹</p>
           </div>
           <div className="biz-illustration-container">
-             {/* Replace with your specific business illustration image */}
             <img src={bussimg} alt="Business Illustration" />
           </div>
           <p className="biz-footnote">¹ Comscore Media Metrix®, calculation based on the monthly average of Yelp visitors for 2024.</p>

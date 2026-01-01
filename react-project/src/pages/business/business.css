@@ -5,7 +5,6 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Header Styles */
 .business-header {
   display: flex;
   justify-content: space-between;
@@ -20,7 +19,10 @@
   text-decoration: none;
 }
 
-.biz-brand-logo { height: 60px; margin-top: 5px; }
+.biz-brand-logo { 
+  height: 60px; 
+  margin-top: 5px; 
+}
 
 .biz-logo-tag {
   font-size: 18px;
@@ -57,10 +59,15 @@
     border-color: #c02d2a;
     color: white;
 }
-.login-white { border: 1px solid #ccc; color: #2d2e2f; }
-.signup-red { background: green; color: #fff; }
+.login-white { 
+  border: 1px solid #ccc; 
+  color: #2d2e2f; 
+}
+.signup-red { 
+  background: green; 
+  color: #fff; 
+}
 
-/* Main Content Layout */
 .business-main-content {
   display: flex;
   flex: 1;
@@ -80,7 +87,6 @@
 
 .biz-subtitle { color: #6e7072; margin-bottom: 40px; }
 
-/* Custom Business Input */
 .biz-input-group {
   position: relative;
   margin-top: 20px;
@@ -100,7 +106,7 @@
 
 .biz-input-wrapper {
   display: flex;
-  border: 2px solid #0073bb; /* Highlighted blue border */
+  border: 2px solid #0073bb; 
   border-radius: 4px;
   align-items: center;
   padding: 5px 15px;
@@ -114,7 +120,6 @@
   font-size: 16px;
 }
 
-/* Image/Stats Section */
 .biz-image-section {
   flex: 1;
   background-color: #f8f8f8;

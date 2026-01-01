@@ -2,7 +2,7 @@ import React from 'react'
 import './footer.css'; 
 import logo from '../../assets/logo.png'; 
 
-// 🌟 UPDATED: Streamlined Links focusing on Food and Drink
+
 const footerLinks = [
     {
         title: 'About',
@@ -27,7 +27,6 @@ return (
     <footer className="main-footer">
             <div className="container footer-content-wrapper">
                 
-                {/* 🌟 Column Links */}
                 <div className="footer-links-grid">
                     {footerLinks.map((section, index) => (
                         <div key={index} className="footer-column">
@@ -45,14 +44,12 @@ return (
                     ))}
                 </div>
                 
-                {/* 🌟 Copyright Section */}
                 <div className="footer-copyright-bar">
                 <div className="copyright-inner-content">
                         <span className="copyright-text">
             Copyright © 2024 
         </span>
         
-        {/* 🌟 FIX 1: Place the logo next to the brand name */}
         <span className="copyright-brand-name">
             Ethio Mesob, Inc.
             <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />

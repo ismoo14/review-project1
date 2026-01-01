@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import MoodOutlinedIcon from '@mui/icons-material/MoodOutlined';
-// Use placeholder images for reviews/businesses
+
 import userPhoto1 from '../../assets/pic-1.jpg'; 
 import userPhoto2 from '../../assets/pic-2.jpg'; 
 import userPhoto3 from '../../assets/pic-3.jpg';
@@ -21,7 +21,7 @@ import reviewPhoto6 from '../../assets/img-13.jpg';
 
 const activities = [
     {
-        user: 'Maklet M.',
+        user: 'Mahlet M.',
         action: 'wrote a review',
         time: 'just now',
         businessName: 'gordo Cafe',
@@ -33,19 +33,19 @@ const activities = [
         link: '/business/gordo-cafe'
     },
     {
-        user: 'Kal-24r.',
+        user: 'Kal.',
         action: 'wrote a review',
         time: 'just now',
-        businessName: 'tokio fries',
-        category: 'Mexican, Fast Food',
+        businessName: 'MIYAGI CAFE',
+        category: 'Chinease, Food',
         rating: 4.0,
-        reviewText: 'Cheap fast easy place to get fries in Addis. This is a great take out spot. Its not the best but I...',
+        reviewText: 'Cheap fast easy place to get chinease food in Addis. This is a great take out spot. Its not the best but I...',
         photo: reviewPhoto4,
         userPhoto: userPhoto4,
         link: '/business/tokio fries'
     },
     {
-        user: 'Koko M.',
+        user: 'lil-Hayfa.',
         action: 'wrote a review',
         time: 'just now',
         businessName: 'Gordo Taqueria',
@@ -57,19 +57,19 @@ const activities = [
         link: '/business/gordo-taqueria'
     },
     {
-        user: 'Koko M.',
+        user: 'Samri.',
         action: 'wrote a review',
         time: 'just now',
-        businessName: 'Gordo Taqueria',
-        category: 'Mexican, Fast Food',
+        businessName: 'TOTOT Traditional food',
+        category: 'Traditional, Food',
         rating: 4.0,
-        reviewText: 'Cheap fast easy place to get burritos in Addis. This is a great take out spot. Its not the best but I...',
+        reviewText: 'traditional food to find in Addis. This is a great take out spot...',
         photo: reviewPhoto6,
         userPhoto: userPhoto6,
         link: '/business/gordo-taqueria'
     },
     {
-        user: 'Brianna W.',
+        user: 'Mike20.',
         action: 'added 3 photos',
         time: '5 minutes ago',
         businessName: 'Morning Dew Cafe',
@@ -81,7 +81,7 @@ const activities = [
         link: '/business/morning-dew-cafe'
     },
     {
-        user: 'Lij Y.',
+        user: 'Afomiya12.',
         action: 'wrote a review',
         time: '1 hour ago',
         businessName: 'Addis Jazz Bar',
@@ -118,7 +118,7 @@ return (
                     {activities.map((activity, index) => (
                         <div className="activity-card" key={index}>
                             
-                            {/* User Header */}
+
                             <div className="user-header">
                                 <img src={activity.userPhoto} alt={activity.user} className="user-avatar" />
                                 <p className="user-action-text">
@@ -127,9 +127,8 @@ return (
                                 </p>
                             </div>
 
-                            {/* Review Content */}
                             <a href={activity.link} className="review-link-block">
-                                {/* Business Name & Rating */}
+
                                 <h3 className="business-name">{activity.businessName}</h3>
                                 
                                 <div className="business-meta-line">
@@ -137,14 +136,12 @@ return (
                                     <span className="category-text">{activity.category}</span>
                                 </div>
                                 
-                                {/* Photo/Snippet */}
                                 <div className="review-photo" style={{ backgroundImage: `url(${activity.photo})` }}></div>
                                 
                                 <p className="review-snippet">{activity.reviewText}</p>
                                 <span className="read-more">Read more</span>
                             </a>
                             
-                            {/* Footer Interaction Icons */}
                             <div className="interaction-footer">
                                 <div className="interaction-icon-group">
                                     <ThumbUpOutlinedIcon className="interaction-icon" />

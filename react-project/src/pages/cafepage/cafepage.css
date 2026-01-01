@@ -67,7 +67,10 @@
   background: #000;
 }
 
-.photo-grid { display: flex; height: 100%; }
+.photo-grid {
+  display: flex; 
+  height: 100%; 
+}
 
 .banner-img {
   width: 33.333%;
@@ -85,11 +88,29 @@
   z-index: 10;
 }
 
-.biz-name { font-size: 42px; font-weight: 800; margin: 0 0 8px 0; }
-.rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.stars-mini { color: #f43939; font-size: 20px; }
-.review-count { font-weight: 600; }
-.status.closed { color: #28a745; font-weight: bold; margin-right: 5px; }
+.biz-name { 
+  font-size: 42px; 
+  font-weight: 800; 
+  margin: 0 0 8px 0;
+}
+.rating-row {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin-bottom: 8px; 
+}
+.stars-mini { 
+  color: #f43939; 
+  font-size: 20px; 
+}
+.review-count {
+  font-weight: 600; 
+}
+.status.closed {
+  color: #28a745; 
+  font-weight: bold; 
+  margin-right: 5px; 
+}
 
 /* --- ACTION BAR --- */
 .action-bar {
@@ -128,15 +149,13 @@
 }
 
 /* --- MAIN LAYOUT --- */
-/* --- MAIN LAYOUT --- */
-/* --- MAIN LAYOUT --- */
 .main-content-container {
   max-width: 1270px;
   margin: 40px auto;
   display: flex;
   gap: 60px;
   padding: 0 20px;
-  align-items: flex-start; /* This is key - prevents stretching */
+  align-items: flex-start; 
 }
 
 /* Left column */
@@ -149,15 +168,15 @@
 .right-column {
   width: 350px;
   flex-shrink: 0;
-  align-self: flex-start; /* Prevents the column from stretching */
+  align-self: flex-start; 
 }
 
 /* THE STICKY ELEMENT - apply directly to the location card or a wrapper */
 .location-card.tall-card {
   position: sticky;
-  top: 110px; /* Adjust this value: navbar height (~100px) + a little margin. Try 100px, 110px, or 120px */
+  top: 110px; 
   z-index: 40;
-  align-self: flex-start; /* Extra safety */
+  align-self: flex-start; 
 }
 
 /* Optional: subtle shadow when stuck */
@@ -190,8 +209,18 @@
   width: max-content;
 }
 
-.menu-cat-card { width: 200px; flex-shrink: 0; text-align: center; }
-.menu-cat-card img { width: 100%; height: 140px; border-radius: 12px; object-fit: cover; border: 1px solid #eee; }
+.menu-cat-card { 
+  width: 200px; 
+  flex-shrink: 0; 
+  text-align: center; 
+}
+.menu-cat-card img { 
+  width: 100%; 
+  height: 140px; 
+  border-radius: 12px; 
+  object-fit: cover; 
+  border: 1px solid #eee; 
+}
 
 .slider-nav-btn {
   position: absolute;
@@ -211,21 +240,69 @@
   font-size: 20px;
 }
 
-.prev { left: -22px; }
-.next { right: -22px; }
+.prev { 
+  left: -22px; 
+}
+.next { 
+  right: -22px; 
+}
 
-.section-divider { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
+.section-divider { 
+  border: 0; 
+  border-top: 1px solid #eee; 
+  margin: 40px 0; 
+}
 
 /* --- SECTION 2: POPULAR DISHES (AUTO-SLIDE) --- */
-.auto-slider-wrapper { position: relative; width: 100%; padding: 20px 0; overflow: hidden; }
-.dishes-slider { display: flex; width: 100%; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
-.slide-track { display: flex; gap: 16px; width: max-content; animation: scroll-smooth 15s linear infinite; will-change: transform; }
-.slide-track:hover { animation-play-state: paused; }
+.auto-slider-wrapper { 
+  position: relative; 
+  width: 100%; 
+  padding: 20px 0; 
+  overflow: hidden; 
+}
+.dishes-slider { 
+  display: flex; 
+  width: 100%; 
+  mask-image: 
+  linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
+}
+.slide-track { 
+  display: flex; 
+  gap: 16px; 
+  width: max-content; 
+  animation: scroll-smooth 15s linear infinite; 
+  will-change: transform; 
+}
+.slide-track:hover { 
+  animation-play-state: paused; 
+}
 
-.dish-card { width: 240px; flex-shrink: 0; border: 1px solid #e6e6e6; border-radius: 8px; background: #fff; overflow: hidden; }
-.dish-img-wrapper { position: relative; height: 160px; }
-.dish-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-.dish-price { position: absolute; top: 10px; right: 10px; background: #28a745; color: white; padding: 3px 8px; border-radius: 4px; font-weight: 700; font-size: 14px; }
+.dish-card { 
+  width: 240px; 
+  flex-shrink: 0; 
+  border: 1px solid #e6e6e6; 
+  border-radius: 8px; 
+  background: #fff; 
+  overflow: hidden; 
+}
+.dish-img-wrapper { 
+  position: relative; height: 160px; }
+.dish-img-wrapper img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+.dish-price { 
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  background: #28a745; 
+  color: white; 
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  font-weight: 700; 
+  font-size: 14px; 
+}
 
 @keyframes scroll-smooth {
   0% { transform: translateX(0); }
@@ -233,32 +310,68 @@
 }
 
 /* --- SECTION 3: REVIEWS (NEW) --- */
-.reviews-container { margin-top: 20px;}
-.review-card { gap: 24px; padding: 30px 0; border-bottom: 1px solid #918d8dff; }
+.reviews-container { 
+  margin-top: 20px;
+}
+.review-card { 
+  gap: 24px; 
+  padding: 30px 0; 
+  border-bottom: 1px solid #918d8dff; 
+}
 
-.review-sidebar { width: 180px; flex-shrink: 0; }
-.user-name { font-weight: 700; margin: 0; font-size: 16px; }
-.elite-tag { background: #d32323; color: white; font-size: 10px; padding: 1px 4px; border-radius: 2px; vertical-align: middle; }
-.user-location { font-size: 14px; font-weight: bold; margin: 2px 0; }
-.user-stats { font-size: 12px; color: #6e7072; display: flex; gap: 8px; margin-top: 4px; }
+.review-sidebar { 
+  width: 180px; 
+  flex-shrink: 0; 
+}
+.user-name { 
+  font-weight: 700; 
+  margin: 0; 
+  font-size: 16px; 
+}
+.elite-tag { 
+  background: #d32323; 
+  color: white; 
+  font-size: 10px; 
+  padding: 1px 4px; 
+  border-radius: 2px; 
+  vertical-align: middle; 
+}
+.user-location { 
+  font-size: 14px; 
+  font-weight: bold; 
+  margin: 2px 0; 
+}
+.user-stats { 
+  font-size: 12px; 
+  color: #6e7072; 
+  display: flex; 
+  gap: 8px; 
+  margin-top: 4px; 
+}
 
-.review-main { flex: 1; }
-.review-rating-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.review-main { 
+  flex: 1; 
+}
+.review-rating-row { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  margin-bottom: 12px; 
+}
 .stars-red { color: #f43939; font-size: 18px; letter-spacing: 2px; }
-.review-date { color: #6e7072; font-size: 14px; }
+.review-date { 
+  color: #6e7072; 
+  font-size: 14px; 
+}
 .review-text {
   line-height: 1.5;
   font-size: 16px;
   color: #2d2e2f;
   margin-bottom: 20px;
-  
-  /* SHORT LINE LOGIC */
-  max-width: 600px;           /* Limits the width so lines stay short */
+  max-width: 600px;          
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: pre-line;
-
-  /* 4-Line Clamp */
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
@@ -266,20 +379,35 @@
   text-overflow: ellipsis;
 }
 
-.review-photo-attachment { position: relative; width: 320px; border-radius: 8px; overflow: hidden; }
-.review-photo-attachment img { width: 100%; height: 220px; object-fit: cover; display: block; }
-.photo-label { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 8px 12px; font-size: 13px; font-weight: bold; }
-
-/* --- RIGHT COLUMN (STICKY MAP) --- */
-/* Makes the contact section roomier to match the taller map */
-.location-card.tall-card .contact-details {
-  padding: 25px 10px; /* Increased vertical padding */
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Adds more space between phone, website, and address */
+.review-photo-attachment { 
+  position: relative; 
+  width: 320px; 
+  border-radius: 8px; 
+  overflow: hidden; 
+}
+.review-photo-attachment img { 
+  width: 100%; 
+  height: 220px; 
+  object-fit: cover; 
+  display: block; 
+}
+.photo-label { 
+  position: absolute; 
+  bottom: 0; left: 0; width: 100%; 
+  background: rgba(0,0,0,0.6); 
+  color: white; 
+  padding: 8px 12px; 
+  font-size: 13px; 
+  font-weight: bold; 
 }
 
-/* Ensures the sticky wrapper doesn't jump */
+/* --- RIGHT COLUMN (STICKY MAP) --- */
+.location-card.tall-card .contact-details {
+  padding: 25px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 
 .location-card {
@@ -290,16 +418,35 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.contact-details { padding: 16px; }
-.contact-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
-.contact-item:last-child { border-bottom: none; }
-.contact-item a { color: #0073bb; text-decoration: none; font-weight: 600; font-size: 14px; }
-.directions p { margin: 4px 0 0 0; font-size: 13px; color: #6e7072; }
-.icon { font-size: 18px; }
+.contact-details { 
+  padding: 16px; 
+}
+.contact-item { 
+  display: flex; 
+  justify-content: space-between; 
+  padding: 12px 0; 
+  border-bottom: 1px solid #f0f0f0; 
+}
+.contact-item:last-child { 
+  border-bottom: none; 
+}
+.contact-item a { 
+  color: #0073bb; 
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 14px; 
+}
+.directions p { 
+  margin: 4px 0 0 0; 
+  font-size: 13px; 
+  color: #6e7072; }
+.icon { 
+  font-size: 18px; 
+}
 .user-avatar-img {
   width: 64px;
   height: 64px;
-  border-radius: 4px; /* Matches the square-ish look in your screenshot */
+  border-radius: 4px;
   object-fit: cover;
 }
 

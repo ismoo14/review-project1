@@ -1,43 +1,43 @@
+/* --- BASE NAVBAR STYLES --- */
 .navbar {
     width: 100%; 
-    position: absolute; 
+    position: absolute; /* Sits on top of the content */
     top: 0;
     left: 0;
-    background-color: transparent; 
-    border-bottom: none; 
-    z-index: 100; 
-    padding: 15px 0; 
+    background-color: transparent; /* Makes it see-through */
+    border-bottom: none; /* Removes the line */
+    z-index: 1000; 
+    padding: 20px 0; 
+    transition: background-color 0.3s ease; /* Smooth transition if you decide to change color on scroll */
 }
 
 .container {
-    width: 100%;
-    /* FAR RIGHT AND LEFT SPACE: Adjust 60px to your liking */
-    padding: 0 60px; 
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px; 
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    /* SPACE BETWEEN SECTIONS: Small gap for a tighter look */
     gap: 18px;
 }
 
+/* --- LOGO --- */
 .logo {
     display: flex;
     align-items: center;
-    margin-top: 7px;     /* Spacing between logo and the search area */
+    flex-shrink: 0;
 }
 
 .logo img {
-    height: 70px; 
-}
-.form {
-    flex-grow: 3;
-    max-width: 1000px; /* Keeps the search bar from becoming too wide */
-    display: flex;
-    justify-content: center;
+    height: 60px; 
 }
 
-.form form {
-    width: 100%;
+/* --- SEARCH FORM (PILL) --- */
+.form {
+    flex-grow: 1;
+    max-width: 650px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-bar-pill {
@@ -47,84 +47,64 @@
     border-radius: 4px;
     border: 1px solid #ccc;
     width: 100%;
-    height: 48px;
+    height: 45px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .input-group {
     flex: 1;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .input-group input {
     width: 100%;
     border: none;
     outline: none;
-    font-size: 16px;
+    font-size: 15px;
     color: #333;
 }
 
 .search-divider {
     width: 1px;
-    height: 29px;
+    height: 24px;
     background-color: #ddd;
 }
-.logo, .nav-right-content {
-    flex-shrink: 0; /* Ensures the logo and buttons stay their original size */
-}
+
 .search-icon-btn {
     background-color: green;
     border: none;
-    width: 65px;
+    width: 55px;
     height: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.nav-right-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    transition: background 0.2s;
 }
 
 .search-icon-btn:hover {
     background-color: #006400;
 }
 
-
-
-.form .input-1 {
-    width: 100%;
-    padding: 13px 15px;
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 16px;
-    outline: none; 
+/* --- RIGHT CONTENT (DESKTOP) --- */
+.nav-right-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
-
-.business h5:hover {
-    color: #0073bb; 
-}
-
-
+/* --- BUTTONS --- */
 .write button, .login button, .sign-Up button {
-    padding: 10px 15px;
+    padding: 10px 18px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0.2s;
 }
-
-.business-dropdown-container, .write, .login, .sign-Up {
-    display: flex;
-    align-items: center; /* Forces buttons to align with the form height */
-}
-
 
 .write button {
     background-color: transparent; 
@@ -132,107 +112,50 @@
     border: 1px solid #0073bb; 
 }
 
-.write button:hover {
-    background-color: #f2f7fb;
-}
+.write button:hover { background-color: #f2f7fb; }
 
 .login button {
     background-color: green; 
     color: white;
-    border: 2px solid green; 
-}
-.login button:hover {
-    background-color: #c02d2a;
-    border-color: #c02d2a;
-}
-.nav-middle-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;               /* Space between Form, Business link, and Review button */
-    flex: 1;                 /* Allows this section to grow and occupy the middle space */
-    justify-content: center; /* Keeps everything in the middle */
-}
-.form {
-    width: 100%;
-    max-width: 450px;        /* Matches the search bar width from your design */
-    display: flex;
-}
-
-/* --- Buttons Section (Far Right) --- */
-.nav-links-and-buttons {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-left: 40px;       /* Pushes buttons away from middle content */
-}
-
-/* Utility to ensure buttons don't wrap */
-.sign-Up button {
-    white-space: nowrap;
-    background-color: green; /* Your specific branding color */
-    color: white;
-    border: none;
-}
-
-
-.nav-links-and-buttons {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.sign-Up {
-    margin-left: 0; 
-}
-.sign-Up button {
-    background-color: green; 
-    color: white; 
     border: 1px solid green; 
 }
 
-.sign-Up button:hover {
+.sign-Up button {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+
+.login button:hover, .sign-Up button:hover {
     background-color: #c02d2a;
     border-color: #c02d2a;
 }
 
+/* --- BUSINESS DROPDOWN --- */
 .business-dropdown-container {
-    position: relative; 
-    height: 100%; 
+    position: relative;
 }
-
 
 .business {
     cursor: pointer;
-    padding: 13px 17px;
-    border-radius: 4px; 
-    margin: 0;
-}
-.business {
+    padding: 10px 15px;
+    border-radius: 4px;
     background-color: #f5f5f5;
 }
+
 .business h5 {
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
     color: #333;
-    white-space: nowrap;
     display: flex;
-    align-items: center; 
-    gap: 5px;
-    text-decoration: none;
-}
-.business:hover h5 {
-    color: #0073bb;
-}
-.business:hover .dropdown-arrow {
-    color: #0073bb;
-    text-decoration: none;
+    align-items: center;
+    gap: 6px;
 }
 
 .dropdown-menu {
     position: absolute; 
-    top: 100%; 
+    top: 110%; 
     left: 50%;
     transform: translateX(-50%); 
     background-color: white;
@@ -241,51 +164,100 @@
     border-radius: 4px;
     padding: 10px 0;
     z-index: 1000;
-    min-width: 250px;
+    min-width: 240px;
 }
 
-.dropdown-arrow {
-    display: inline-block;
-    font-size: 10px; 
-    color: #333;
-    transition: transform 0.2s ease-in-out; 
-}
-
-.dropdown-arrow.open {
-    transform: rotate(180deg);
-}
 .dropdown-item {
     display: flex;
     align-items: center;
-    padding: 8px 15px;
-    text-decoration: none !important;
+    padding: 10px 15px;
+    text-decoration: none;
     color: #333;
     font-size: 14px;
-    white-space: nowrap;
-}
-.dropdown-menu a {
-    text-decoration: none;
 }
 
 .dropdown-item:hover {
     background-color: #f5f5f5;
-    color: #0073bb; 
-    text-decoration: none !important;
-}
-
-.dropdown-item .icon {
-    margin-right: 10px;
-    font-size: 16px;
-}
-
-.dropdown-menu hr {
-    border: none;
-    border-top: 1px solid #eee;
-    margin: 5px 0;
-}
-
-.dropdown-item.explore-link {
-    font-weight: bold;
     color: #0073bb;
-    text-decoration: none !important;
+}
+
+/* --- HAMBURGER ICON --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    padding: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* --- MOBILE RESPONSIVE LOGIC --- */
+
+@media (max-width: 1024px) {
+    .container { padding: 0 20px; }
+    .form { max-width: 400px; }
+}
+
+@media (max-width: 850px) {
+    /* Show Hamburger */
+    .hamburger { display: flex; }
+
+    /* Hide Search on Mobile Header */
+    .form { display: none; }
+
+    /* Transform Right Content into Sliding Sidebar */
+    .nav-right-content {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden */
+        width: 280px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 25px;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 1999;
+        gap: 20px;
+    }
+
+    .nav-right-content.open {
+        right: 0; /* Slide In */
+    }
+
+    .nav-right-content > div, 
+    .nav-right-content .business-dropdown-container {
+        width: 100%;
+    }
+
+    .nav-right-content button {
+        width: 100%;
+    }
+
+    /* Hamburger Animation to X */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* --- OVERLAY --- */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1500;
 }

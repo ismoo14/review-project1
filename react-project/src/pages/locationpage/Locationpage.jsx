@@ -5,13 +5,13 @@ import logo from "../../assets/logo.png"; // Ensure this path is correct
 
 // Sample data - You can move this to a separate file later
 const cafes = [
-    { id: 1, name: "Abyssinia Ethiopian Restaurant", city: "Mercato", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
-    { id: 2, name: "Tomoca Coffee", city: "Addis Ababa", location: "Piazza", rating: 4.8, reviews: 120, image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=500&q=60" },
-    { id: 3, name: "Mercato Traditional Coffee", city: "Mercato", location: "Market Square", rating: 4.2, reviews: 85, image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=500&q=60" },
-    { id: 4, name: "Capital One Café", city: "San Francisco", location: "Downtown", rating: 4.0, reviews: 310, image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=500&q=60" },
-    { id: 5, name: "Hidya cafe", city: "Mercato", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
-    { id: 6, name: "1-LOVE cafe", city: "Mercato", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
-    { id: 7, name: "Friends coffee House", city: "Mercato", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
+    { id: 1, name: "Abyssinia Ethiopian Restaurant", city: "Jimma", location: "mercato", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
+    { id: 2, name: "Tomoca Coffee", city: "Addis Ababa", location: "summit", rating: 4.8, reviews: 120, image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=500&q=60" },
+    { id: 3, name: "Mercato Traditional Coffee", city: "jimma", location: "qochi", rating: 4.2, reviews: 85, image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=500&q=60" },
+    { id: 4, name: "Capital One Café", city: "Addis Ababa", location: "ayat", rating: 4.0, reviews: 310, image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=500&q=60" },
+    { id: 5, name: "Hidya cafe", city: "jimma", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
+    { id: 6, name: "1-LOVE cafe", city: "jimma", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
+    { id: 7, name: "Friends coffee House", city: "jimma", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=60" },
 
 ];
 
@@ -22,9 +22,15 @@ const Locationpage = () => {
     const locationQuery = searchParams.get("find_loc") || "";
 
     // Filter cafes based on the city in the URL
-    const filteredCafes = cafes.filter(cafe => 
-        cafe.city.toLowerCase().includes(locationQuery.toLowerCase())
-    );
+    const filteredCafes = cafes.filter(cafe => {
+    const query = locationQuery.toLowerCase();
+    
+    // Combine all searchable text into one string
+    const searchableText = `${cafe.city} ${cafe.location} ${cafe.name}`.toLowerCase();
+
+    // Does the searchable text contain the user's input?
+    return searchableText.includes(query);
+});
 
     return (
         <div className="page-wrapper">

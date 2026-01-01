@@ -1,244 +1,231 @@
+/* --- Global Styles --- */
+.page-wrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Navbar --- */
 .navbar-wrapper {
   background-color: #ffffff;
   border-bottom: 1px solid #eee;
-  padding: 16px 0;
+  padding: 12px 0;
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
-/* Container to center content and control max width */
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-/* Left side - Logo */
-.navbar-left {
-  display: flex;
   align-items: center;
-}
-
-.logo-container {
-  display: block;
 }
 
 .brand-logo {
-  height: 50px;            /* Adjust based on your logo size */
+  height: 55px;
   width: auto;
-  object-fit: contain;
 }
 
-/* Right side - Buttons */
 .navbar-right {
   display: flex;
-  align-items: center;
   gap: 12px;
 }
 
 .nav-btn {
-  padding: 10px 20px;
+  padding: 8px 20px;
   font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
+  font-weight: 700;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
+  transition: all 0.2s;
 }
 
 .login-btn {
-  background-color: transparent;
+  background: white;
   color: #333;
-  border: 1px solid #ddd;
-}
-
-.login-btn:hover {
-  background-color: #f5f5f5;
-  border-color: #ccc;
+  border: 1px solid #ccc;
 }
 
 .signup-btn {
-  background-color: #28a745;   /* Green like in your screenshot */
+  background: #28a745;
   color: white;
   border: none;
 }
 
-.signup-btn:hover {
-  background-color: #218838;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
-}
-/* General layout */
-.page-wrapper {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
-
-.hero-container {
-  display: flex;
-  align-items: flex-start;        /* Align both sides to the top */
-  justify-content: space-between;
+/* --- Hero Section --- */
+.hero-section {
   max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
-  gap: 60px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
-.hero-left {
-  flex: 1;
-  min-width: 0;                   /* Allows flex child to shrink if needed */
+.hero-content {
   display: flex;
-  flex-direction: column;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-left { 
+  flex: 1.2; 
 }
 
 .hero-title {
-  font-size: 36px;
-  margin-bottom: 12px;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #000;
 }
 
 .hero-subtitle {
-  color: #666;
+  font-size: 19px;
+  color: #6e7072;
   margin-bottom: 40px;
-  font-size: 18px;
 }
 
-.hero-right {
-  flex-shrink: 0;                 /* CRITICAL: Prevents the image side from shrinking */
-  align-self: flex-start;
+/* --- Illustration Card --- */
+.hero-right { 
+  flex: 0.8; 
+}
+
+.illustration-card {
+  background-color: #fff1e0; 
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image {
   max-width: 100%;
-  width: 500px;                   /* Optional: set a preferred fixed width */
   height: auto;
-  border-radius: 12px;
   object-fit: contain;
-  display: block;
 }
 
-/* Search Bar */
-.search-bar-container {
+/* --- Search Bar Composite --- */
+.search-composite {
   display: flex;
-  align-items: flex-start;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  gap: 10px;
   width: 100%;
-  box-sizing: border-box;
 }
 
-.search-input-group {
-  display: flex;
-  align-items: flex-start;
-  flex: 1;
-  gap: 12px;
-}
-
-.business-input-wrapper {
+.search-pill {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  min-width: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  height: 60px;
 }
 
-.search-input {
-  padding: 14px 16px;
-  font-size: 18px;
+.input-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 16px;
+}
+
+.input-box input {
+  width: 100%;
   border: none;
   outline: none;
+  font-size: 16px;
   background: transparent;
 }
 
-.business-input {
-  min-width: 300px;
-}
-
-.location-input {
-  width: 220px;
-  border-left: 1px solid #ddd;
-  padding-left: 16px;
-}
-
-.divider {
+.input-divider {
   width: 1px;
-  background: #ddd;
-  align-self: stretch;
+  height: 30px;
+  background-color: #ddd;
+  align-self: center;
 }
 
-.search-btn {
-  background: green;
+.hero-search-btn {
+  background-color: #28a745;
+  color: white;
   border: none;
-  border-radius: 8px;
-  padding: 10px 13px;
+  border-radius: 4px;
+  width: 55px;
+  height: 60px;
   cursor: pointer;
-  margin-left: -15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
+  margin-left: -18px;
 }
 
-.search-btn:hover {
-  background: #b51c1c;
-}
-
-/* Suggestions List - NO absolute positioning, flows naturally */
+/* --- Dropdown Suggestions --- */
 .suggestions-list {
-  margin-top: 8px;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  z-index: 100;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .suggestion-item {
-  display: flex;
-  align-items: center;
   padding: 12px 16px;
   cursor: pointer;
-  transition: background 0.2s;
-  gap: 12px;
 }
 
-.suggestion-item:hover {
-  background: #f9f9f9;
-}
+.item-name { font-weight: 600; color: #2d2e2f; }
+.item-location { font-size: 12px; color: #6e7072; }
 
-.suggestion-item:last-child {
-  border-bottom: none;
-}
+/* --- RESPONSIVE MOBILE FIX --- */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column-reverse; /* Swaps the vertical order: Right side (Image) goes to TOP */
+    text-align: center;
+    gap: 30px;
+    padding-top: 20px;
+  }
+  
+  .hero-right {
+    width: 100%; /* Ensures the illustration takes full width on mobile */
+  }
 
-.item-image-placeholder {
-  width: 40px;
-  height: 40px;
-  background: #eee;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
+  .hero-left {
+    width: 100%;
+  }
 
-.item-text {
-  flex: 1;
-}
+  .hero-title {
+    font-size: 30px;
+  }
 
-.item-name {
-  font-weight: 600;
-  font-size: 16px;
-  color: #333;
+  .search-composite {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-pill {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    box-shadow: none;
+  }
+  
+  .input-divider { display: none; }
+  
+  .input-box {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .hero-search-btn {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+  }
 }
-
-.item-location {
-  font-size: 14px;
-  color: #666;
-  margin-top: 2px;
-}
-
-/* Navbar styles (keep your existing ones or add) */
-.navbar-wrapper { /* ... your existing styles */ }

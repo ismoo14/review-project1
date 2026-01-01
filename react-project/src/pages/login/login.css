@@ -1,7 +1,7 @@
 /* 1. Global Page Container */
 .login-page-container {
   display: flex;
-  flex-direction: column; /* Stacks Header on top of Content */
+  flex-direction: column;
   align-items: center;
   background-color: #fff;
   min-height: 100vh;
@@ -9,38 +9,37 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* 2. Header Section (Top Left) */
+/* 2. Header Section */
 .login-header-simple {
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #ebebeb; /* The subtle line from the design */
+  border-bottom: 1px solid #ebebeb;
   padding: 10px 0;
 }
 
 .header-container {
-  max-width: 1300px; /* Wider container pushes logo further left */
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 40px;
-  display: flex;
-  align-items: center;
 }
 
-.brand-logo {
-  height: 70px; /* Matches the larger logo request */
+.brand-logo{
+  height: 90px; /* Consistent with login */
   width: auto;
-  display: block;
-  margin-top: 7px;
+  margin-top: 8px;
+  transition: height 0.3s ease; /* Smooth transition when resizing window */
+  object-fit: contain;
 }
 
-/* 3. Main Content Wrapper (Form + Illustration) */
+/* 3. Main Content Wrapper */
 .login-content-wrapper {
   display: flex;
   max-width: 1100px;
   width: 100%;
-  gap: 100px; /* Spacing between form and circle */
+  gap: 230px;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px; /* Space between header and form */
+  padding: 60px 20px;
 }
 
 /* 4. Form Side Styling */
@@ -51,7 +50,7 @@
 }
 
 .login-title {
-  color: green; /* Yelp Red */
+  color: #2d2e2f;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -65,64 +64,11 @@
 }
 
 .link-text {
-  color: green;
+  color: #0073bb;
   cursor: pointer;
-  text-decoration: none;
 }
 
-/* 5. Social Buttons */
-.social-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: white;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s;
-}
-
-.social-btn:hover {
-  background-color: #f7f7f7;
-}
-
-.social-btn img {
-  width: 18px;
-  height: 18px;
-}
-
-/* 6. OR Divider */
-.divider-container {
-  display: flex;
-  align-items: center;
-  margin: 25px 0;
-  color: #999;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.divider-container hr {
-  flex: 1;
-  border: 0;
-  border-top: 1px solid #eee;
-}
-
-.divider-container span {
-  margin: 0 10px;
-}
-
-/* 7. Input Fields */
+/* 5. Form Fields */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -133,12 +79,13 @@
   padding: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 14px;
-  outline-color: #d32323;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .login-submit-btn {
-  background-color: green;
+  background-color: #28a745; /* Your Green */
   color: white;
   border: none;
   padding: 14px;
@@ -146,44 +93,23 @@
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: background 0.2s;
 }
 
 .login-submit-btn:hover {
-  background-color: #bd1f1f;
+  background-color: #218838;
 }
 
 .login-footer-link {
   margin-top: 25px;
-  color: black;
   font-size: 14px;
-  cursor: pointer;
+  text-decoration: none;
 }
+
 .login-footer-link span {
-    color: green;
-}
-/* 8. Circular Illustration Side */
-.login-image-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.illustration-circle {
-  width: 480px;
-  height: 480px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f8f8; /* Soft background inside the circle */
-}
-
-.illustration-circle img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  color: #28a745;
+  font-weight: 600;
+  text-decoration: none;
 }
 .biz-signup-footer a {
     text-decoration: none !important;
@@ -194,20 +120,63 @@
     text-decoration: none;
 }
 
-.login-footer-link a:hover {
-    border-bottom: solid 2px green;
+/* 6. Illustration Side */
+.login-image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
+.illustration-circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff1e0; /* Matches your illustration theme */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* 9. Responsive Rules */
+.illustration-circle img {
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 7. RESPONSIVE BREAKPOINTS */
 @media (max-width: 900px) {
   .login-content-wrapper {
-    flex-direction: column;
-    padding-top: 40px;
+    /* column-reverse moves the last child (Image) to the TOP */
+    flex-direction: column-reverse; 
+    padding: 30px 20px;
     gap: 40px;
   }
+
+  .illustration-circle {
+    width: 280px; /* Smaller circle for mobile */
+    height: 280px;
+  }
+
+  .login-form-side {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .header-container {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Center logo on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 20px;
+  }
   
-  .login-image-side {
-    display: none; /* Hides image on mobile like the real Yelp site */
+  .illustration-circle {
+    width: 220px;
+    height: 220px;
   }
 }

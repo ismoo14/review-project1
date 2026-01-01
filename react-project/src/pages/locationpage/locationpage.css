@@ -7,6 +7,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    overflow: hidden;
 }
 
 .navbar-container {
@@ -16,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+    overflow: hidden;
 }
 
 .brand-logo {
@@ -106,9 +108,8 @@
 .map-side {
     flex: 1;
     position: sticky; 
-    top: 100px; /* Distance from the top of the window */
-    height: calc(100vh - 120px); /* Ensures the map fills the visible screen */
-    z-index: 10;
+    top: 70px; 
+    height: calc(100vh - 70px); 
 }
 
 .sticky-map {
