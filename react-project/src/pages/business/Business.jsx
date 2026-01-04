@@ -11,12 +11,12 @@ const Business = () => {
         <div className="biz-header-left">
           <Link to="/" className="biz-logo-container">
             <img src={logo} alt="Ethio Mesob Logo" className="biz-brand-logo" />
-            <span className="biz-logo-tag">for business</span>
+            <span className="biz-logo-tag">for Business</span>
           </Link>
         </div>
         <div className="biz-header-right">
           <div className="phone-info">
-            <i className="phone-icon">📞</i>
+            <span className="phone-icon">📞</span>
             <span>+251991719305</span>
           </div>
           <Link to="/login" className="biz-nav-btn login-white">Log In</Link>
@@ -37,7 +37,7 @@ const Business = () => {
                 className="biz-name-input" 
                 placeholder=" "
               />
-              <button className="biz-search-icon">🔍</button>
+              <button className="biz-search-icon" style={{background: 'transparent', border: 'none', cursor: 'pointer'}}>🔍</button>
             </div>
           </div>
         </section>
@@ -52,7 +52,23 @@ const Business = () => {
           <p className="biz-footnote">¹ Comscore Media Metrix®, calculation based on the monthly average of Yelp visitors for 2024.</p>
         </section>
       </main>
-    </div>
+      <div className="footer-copyright-bar">
+                      <div className="copyright-inner-content">
+                              <span className="copyright-text">
+                  Copyright © 2024 
+              </span>
+              
+              <span className="copyright-brand-name">
+                  Ethio Mesob, Inc.
+                  <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+              </span>
+      
+              <span className="copyright-text">
+                  All rights reserved.
+              </span>
+                          </div>
+                      </div>
+                  </div>
   )
 }
 

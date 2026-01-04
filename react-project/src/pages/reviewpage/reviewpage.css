@@ -74,62 +74,73 @@
   box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
 }
 /* --- Global Layout --- */
+/* Container and Layout */
+.page-container {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
 .review-layout {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Forces sidebar to stay 350px wide */
     max-width: 1100px;
     margin: 40px auto;
-    gap: 50px;
+    gap: 60px;
     padding: 0 20px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* --- Left Column: Review Form --- */
-.review-main { 
-    flex: 2; 
+/* Form Styles */
+.review-main {
+    display: flex;
+    flex-direction: column;
 }
 
-.cafe-header { 
-    display: flex; 
-    gap: 15px; 
-    margin-bottom: 25px; 
+.cafe-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.cafe-header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-    color: #2d2e2f;
-}
-
-.cafe-header p {
-    margin: 4px 0 0 0;
-    color: #6e7072;
-}
-
-.cafe-icon { 
-    border-radius: 4px; 
-    width: 60px;
-    height: 60px;
+.cafe-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
-/* --- THE STAR RATING BOX --- */
-.rating-box {
-    margin: 20px 0 30px 0;
+.cafe-title-info h1 {
+    font-size: 23px;
+    margin: 0;
+    color: #2d2e2f;
+    margin-bottom: 4px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: -0.4px;
+    font-weight: 700 (Bold);
 }
 
-.rating-box h3 {
+.section-title {
     font-size: 18px;
     font-weight: 700;
-    color: #2d2e2f;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    text-align: left;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700 (Bold);
 }
 
-.stars-container {
+.subtitle {
+    font-size: 14px;
+    color: #6e7072;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Rating Stars */
+.stars-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin: 15px 0 30px 0;
 }
 
 .stars-row {
@@ -137,55 +148,37 @@
     gap: 4px;
 }
 
-/* Red square buttons for stars */
 .star-box {
-    width: 40px;
-    height: 40px;
-    background-color: #e6e6e6; 
+    width: 45px;
+    height: 45px;
+    background-color: #e6e6e6;
     border: none;
     border-radius: 4px;
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 32px;
     cursor: pointer;
-    transition: background-color 0.1s ease;
+    transition: background 0.2s;
 }
 
-/* The specific red from your design */
 .star-box.active {
-    background-color: green; 
+    background-color: green; /* Yelp Red or choose your green */
 }
 
-/* The dynamic text (Great, Good, etc.) */
 .rating-label {
     font-size: 16px;
-    color: #2d2e2f;
-    font-weight: 400;
+    color: #6e7072;
+    font-family: 'Inter', sans-serif;
 }
 
-/* --- Input Area --- */
-.input-box h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.tags {
-    margin-bottom: 12px;
-}
-
+/* Textarea area */
+.tags { margin-bottom: 15px; }
 .tags span {
     background: #f0f0f0;
-    padding: 6px 14px;
-    border-radius: 100px;
+    padding: 5px 15px;
+    border-radius: 4px;
     margin-right: 8px;
-    font-size: 13px;
-    color: #2d2e2f;
-    cursor: pointer;
+    font-size: 14px;
+    color: #484848;
 }
 
 textarea {
@@ -195,86 +188,308 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    resize: vertical;
-    outline: none;
+    font-family: inherit;
+    resize: none;
 }
 
-textarea:focus {
-    border-color: #2d2e2f;
+.textarea-footer {
+    margin-top: 10px;
 }
 
 .min-chars {
     font-size: 13px;
     color: #6e7072;
-    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.min-chars.success {
+    color: #008000;
 }
 
 .post-btn {
+    width: max-content;
+    padding: 12px 40px;
     background: green;
     color: white;
     border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: 700;
     border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
 }
 
 .post-btn:disabled {
     background: #e6e6e6;
-    color: #999;
     cursor: not-allowed;
 }
 
-/* --- Right Sidebar --- */
+/* Sidebar Styles */
+/* --- Right Sidebar Container --- */
 .review-sidebar {
-    flex: 1;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #ebebeb;
     padding-left: 30px;
+    max-width: 360px; /* Maintains the narrow sidebar look */
 }
 
-.review-sidebar h2 {
-    font-size: 18px;
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
     margin-bottom: 20px;
+    color: #2d2e2f;
+}
+
+/* --- Review Card --- */
+.sidebar-rev-card {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- User Profile Section --- */
+.user-info {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Circle profile pictures */
+    object-fit: cover;
+}
+
+.user-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0073bb; /* Yelp-style blue for links */
+    text-decoration: none;
+}
+
+.elite-badge {
+    background-color: #d32323;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+/* --- User Stats (The icons below the name) --- */
+.user-stats {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: #6e7072;
+    margin-top: 2px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Circular Avatar Styling */
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Prevents stretching */
+    display: block;
+}
+
+/* User Name and Stats */
+.user-name {
+    color: #0073bb;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.user-stats {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    color: #6e7072;
+    margin-top: 2px;
+}
+
+.elite-badge {
+    background: #d32323;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+/* Star Blocks (Red squares with white stars) */
+.mini-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star-block {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    font-size: 12px;
+    color: white; /* The star icon color */
+    background: #e6e6e6;
+}
+
+.star-block.filled {
+    background: #FFD700; /* Gold/Yellow background for filled stars */
+}
+
+.rev-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.rev-preview {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2d2e2f;
+}
+
+/* --- Rating & Date Row --- */
+.rev-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.mini-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star-icon {
+    width: 14px;
+    height: 14px;
+    background: #d32323; /* Solid red blocks for rating */
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.rev-date {
+    font-size: 12px;
+    color: #6e7072;
+}
+
+/* --- Review Text --- */
+/* Ensure the sidebar itself isn't too narrow */
+.review-sidebar {
+    border-left: 1px solid #ebebeb;
+    padding-left: 30px;
+    flex: 1; /* Allows it to grow to fill space */
+    min-width: 350px; /* Gives the text enough room to breathe */
 }
 
 .sidebar-rev-card {
-    margin-bottom: 25px;
+    width: 100%; /* Important: Card must fill sidebar */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
 }
 
-.user-info { 
-    display: flex; 
-    gap: 10px; 
-    align-items: center; 
-    margin-bottom: 8px; 
+.rev-preview {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2d2e2f;
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: none; 
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+/* Responsive */
+@media (max-width: 900px) {
+    .review-layout {
+        grid-template-columns: 1fr; 
+    }
+    .review-sidebar {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #eee;
+        padding-top: 30px;
+    }
 }
 
-.user-avatar { 
-    width: 32px; 
-    height: 32px; 
-    background: #eee; 
-    border-radius: 4px; 
-    display: grid; 
-    place-items: center;
-    font-size: 18px;
+
+
+.mini-stars {
+  display: flex;
+  gap: 2px;
+  margin-right: 10px;
 }
 
-.rev-date { font-size:
-    12px; 
-    color: #6e7072; 
-}
-.mini-stars { color: #f43939; 
-    margin: 4px 0; 
-    font-size: 14px; 
-}
-.rev-preview { font-size: 14px; 
-    line-height: 1.5; 
-    color: #2d2e2f; 
+.star-box-mini {
+  width: 18px; 
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px; 
+  font-size: 12px;   
+  color: #fff;      
+  background-color: #e6e6e6; 
+  line-height: 1;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin-top: 20px;
+.star-box-mini.filled {
+  background-color: green;
+}
+
+.rev-date {
+  font-size: 14px;
+  color: #6e7072;
+  font-family: 'Inter', sans-serif;
+}
+
+.rev-preview {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #2d2e2f;
+  white-space: normal;
+  word-wrap: break-word;
 }

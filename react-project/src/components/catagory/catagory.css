@@ -15,7 +15,7 @@
     grid-template-columns: repeat(3, 1fr); 
     gap: 60px;
 }
-.section-title {
+.section-title1 {
     font-size: 35px;
     font-weight: bold;
     color: #333;

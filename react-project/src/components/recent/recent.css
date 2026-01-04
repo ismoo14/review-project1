@@ -92,12 +92,11 @@
     margin-bottom: 10px;
 }
 
-.star-rating .star-icon {
+.star-rating1 .star-icon {
     font-size: 16px !important;
-    color: #f15c00;
 }
 
-.star-rating .star-icon.empty {
+.star-rating1 .star-icon.empty {
     color: #e0e0e0;
 }
 

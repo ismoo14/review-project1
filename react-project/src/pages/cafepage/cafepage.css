@@ -153,7 +153,7 @@
   max-width: 1270px;
   margin: 40px auto;
   display: flex;
-  gap: 60px;
+  gap: 40px;
   padding: 0 20px;
   align-items: flex-start; 
 }
@@ -201,18 +201,26 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   padding: 10px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.clickable-viewport::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .clickable-track {
   display: flex;
   gap: 20px;
   width: max-content;
+  padding: 0 5px;
 }
 
 .menu-cat-card { 
   width: 200px; 
   flex-shrink: 0; 
   text-align: center; 
+  cursor: pointer;
 }
 .menu-cat-card img { 
   width: 100%; 
@@ -220,32 +228,45 @@
   border-radius: 12px; 
   object-fit: cover; 
   border: 1px solid #eee; 
+  transition: transform 0.2s ease;
+}
+
+.menu-cat-card h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #2d2e2f;
 }
 
 .slider-nav-btn {
   position: absolute;
-  top: 40%;
+  top: 42%; /* Centered vertically */
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   background-color: white;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly stronger shadow */
   cursor: pointer;
-  z-index: 10;
+  /* High z-index to stay above images */
+  z-index: 20; 
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  transition: all 0.2s ease;
 }
 
-.prev { 
-  left: -22px; 
+.slider-nav-btn:hover {
+  background: #f8f8f8;
 }
-.next { 
-  right: -22px; 
+
+
+
+.prev { left: 2px;
+  margin-left: -18px;
 }
+.next { right: 2px; margin-right: -19px; }
 
 .section-divider { 
   border: 0; 
@@ -314,19 +335,24 @@
   margin-top: 20px;
 }
 .review-card { 
-  gap: 24px; 
-  padding: 30px 0; 
-  border-bottom: 1px solid #918d8dff; 
+  display: flex;
+  gap: 2px; 
+  padding: 15px 0; 
+  border-bottom: 1px solid rgb(247, 246, 246); 
 }
 
 .review-sidebar { 
-  width: 180px; 
+  width: 140px; 
   flex-shrink: 0; 
 }
+.user-avatar-img, .user-avatar-placeholder {
+  width: 50px; /* Slightly smaller avatar */
+  height: 50px;
+  border-radius: 4px;
+}
 .user-name { 
-  font-weight: 700; 
-  margin: 0; 
-  font-size: 16px; 
+  font-size: 14px; /* Slightly smaller font */
+  line-height: 1.2;
 }
 .elite-tag { 
   background: #d32323; 
@@ -334,7 +360,6 @@
   font-size: 10px; 
   padding: 1px 4px; 
   border-radius: 2px; 
-  vertical-align: middle; 
 }
 .user-location { 
   font-size: 14px; 
@@ -350,13 +375,14 @@
 }
 
 .review-main { 
+  min-width: 0;
   flex: 1; 
 }
 .review-rating-row { 
   display: flex; 
   align-items: center; 
-  gap: 12px; 
-  margin-bottom: 12px; 
+  gap: 8px; 
+  margin-bottom: 6px; 
 }
 .stars-red { color: #f43939; font-size: 18px; letter-spacing: 2px; }
 .review-date { 
@@ -381,7 +407,7 @@
 
 .review-photo-attachment { 
   position: relative; 
-  width: 320px; 
+  width: 260px; 
   border-radius: 8px; 
   overflow: hidden; 
 }
@@ -460,4 +486,254 @@
   padding: 2px 4px;
   border-radius: 2px;
   margin-left: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  .banner-img {
+    width: 100%; /* Focused image takes full width */
+  }
+
+  .business-header-info {
+    padding: 20px;
+    bottom: 10px;
+  }
+
+  .navbar-wrapper {
+    padding: 8px 0;
+  }
+
+  .nav-btn {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-right {
+    gap: 8px;
+  }
+  
+  .category-text {
+    display: block; /* Wraps long text on very small screens */
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content-container {
+    flex-direction: column; /* Stacks columns on tablets/phones */
+    gap: 20px;
+  }
+
+  .right-column {
+    width: 100%; /* Map takes full width on mobile */
+    order: 2; /* Ensures map is below the menu */
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .location-card.tall-card {
+    position: relative; /* Removes sticky on mobile */
+    top: 0;
+  }
+
+  .responsive-iframe {
+    height: 300px; /* Shorter map on mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-cat-card {
+    width: 160px; /* Smaller cards for small screens */
+  }
+  
+  .menu-cat-card img {
+    height: 110px;
+  }
+
+  .dish-card {
+    width: 200px;
+  }
+
+  .slider-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  /* Make nav buttons less intrusive on mobile */
+  .prev { left: -10px; }
+  .next { right: -10px; }
+}
+
+@keyframes scroll-smooth {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 8px)); }
+} 
+
+
+@media (max-width: 1024px) {
+  /* Bring buttons slightly inside so they don't hit the screen edge */
+  .prev { left: 0; }
+  .next { right: 0; }
+}
+
+@media (max-width: 768px) {
+  /* 1. The Container: Needs overflow and padding */
+  .clickable-viewport {
+    display: flex;
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide for Firefox */
+    -ms-overflow-style: none; /* Hide for IE/Edge */
+    
+    /* This creates the space on the left/right of the scrolling area */
+    padding: 0 15px; 
+  }
+
+  /* Hide scrollbar for Chrome/Safari */
+  .clickable-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. The Track: Needs to ensure it doesn't collapse the padding */
+  .clickable-track {
+    display: flex;
+    gap: 15px;
+    /* This ensures the last item has space on the right after scrolling */
+    padding-right: 15px; 
+  }
+
+  /* 3. The Cards: Fixed width so they don't shrink */
+  .menu-cat-card {
+    flex: 0 0 160px; /* Don't grow, don't shrink, stay 160px */
+    width: 160px;
+    text-align: center;
+  }
+
+  .menu-cat-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px; /* Matches the rounded look in your screenshots */
+  }
+
+  .menu-cat-card h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* Keep buttons hidden as swiping is better for this layout */
+  .slider-nav-btn {
+    display: none; 
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-cat-card {
+    width: 140px;
+  }
+  
+  .menu-cat-card h4 {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .review-card {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .review-sidebar {
+    width: 100%;
+  }
+
+  .user-profile-header {
+    flex-direction: row; /* Avatar next to text on mobile */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .review-photo-attachment {
+    max-width: 100%; /* Photos take full width on phones */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .review-card {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .review-sidebar {
+    width: 100%;
+  }
+
+  .user-profile-header {
+    flex-direction: row; /* Avatar next to text on mobile */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .review-photo-attachment {
+    max-width: 100%; /* Photos take full width on phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .user-stats {
+    flex-wrap: wrap; /* Prevent stats from clipping on tiny screens */
+  }
+  
+  .review-rating-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+
+.copyright-inner-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-logo {
+    height: 30px; 
+    width: auto;
+    margin-right: 0 5px; 
+    vertical-align: middle; 
+}
+.copyright-brand-name {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    margin: 0 5px; 
+}
+
+.footer-copyright-bar {
+    text-align: center; 
+}
+.copyright-text {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    display: inline;
 }

@@ -17,7 +17,7 @@ const Imageslider = () => {
     const phrases = [
         "Read trusted reviews. Share your experience.",
         "Finding the next great place?",
-        "From injera to Ethiopian coffee",
+        "Finding the next great place? Let us be your guide",
         "Your local guide to Ethiopian restaurants."
     ];
 
@@ -37,39 +37,45 @@ const Imageslider = () => {
     }, [totalImages]);
 return (
     <div className="slider-container">
+            {/* OVERLAY CONTENT */}
             <div className="hero-text-overlay">
                 
-                <div className="hero-loader">
-                    {phrases.map((_, index) => (
-                        <div 
-                            key={index}
-                            className={`loader-line ${index === currentImageIndex ? 'active' : ''}`}
-                            onClick={() => setCurrentImageIndex(index)} 
-                        ></div>
-                    ))}
-                </div>
+                {/* TOP ROW: Loader + Phrase */}
+                <div className="hero-top-layout">
+                    <div className="hero-loader">
+                        {phrases.map((_, index) => (
+                            <div 
+                                key={index}
+                                className={`loader-line ${index === currentImageIndex ? 'active' : ''}`}
+                                onClick={() => setCurrentImageIndex(index)} 
+                            ></div>
+                        ))}
+                    </div>
 
-                <div className="hero-content">
-                    <h1 className="hero-phrase">
-                        {phrases[currentImageIndex]}
-                    </h1>
-                    
-                    <div className="hero-search-cta">
-                        <a href="/assistant-search" className="hero-assistant-button">
-                            <SearchIcon className="cta-search-icon" />
-                            Start your search
-                        </a>
+                    <div className="hero-content">
+                        <h1 className="hero-phrase">
+                            {phrases[currentImageIndex]}
+                        </h1>
                     </div>
                 </div>
+
+                {/* BOTTOM ROW: The Button (Now pushed below) */}
+                <div className="hero-search-cta">
+                    <a href="/assistant-search" className="hero-assistant-button">
+                        <SearchIcon className="cta-search-icon" />
+                        Start your search
+                    </a>
+                </div>
+
             </div>
             
+            {/* BACKGROUND IMAGES */}
             {images.map((image, index) => (
                 <div 
                     key={index}
                     className={`slide ${index === currentImageIndex ? 'active' : ''}`}
                     style={{ backgroundImage: `url(${image})` }}
-                >
-                </div>
+                ></div>
             ))}
         </div>
 )

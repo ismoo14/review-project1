@@ -11,6 +11,7 @@
   align-items: center;
   padding: 10px 40px;
   border-bottom: 1px solid #ebebeb;
+  flex-wrap: wrap;
 }
 
 .biz-logo-container {
@@ -71,6 +72,7 @@
 .business-main-content {
   display: flex;
   flex: 1;
+  flex-direction: row;
 }
 
 .biz-form-section {
@@ -154,4 +156,117 @@
   left: 40px;
   font-size: 10px;
   color: #999;
+}
+
+
+/* --- Optimized Tablet & Mobile Responsiveness --- */
+
+@media (max-width: 1024px) {
+  /* 1. Make the main content stack vertically earlier for tablets */
+  .business-main-content {
+    flex-direction: column;
+    align-items: center; /* Centers children horizontally */
+    overflow-y: auto;
+  }
+
+  /* 2. Center the form section and make it wider on tablet */
+  .biz-form-section {
+    max-width: 90%; 
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center; /* Centers the H1 and Subtitle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3. Ensure the input group is centered and takes appropriate width */
+  .biz-input-group {
+    width: 100%;
+    max-width: 550px; /* Limits width so it doesn't look stretched on wide tablets */
+    margin: 20px auto 0 auto;
+    text-align: left; /* Keeps label aligned with input start */
+  }
+
+  .biz-input-wrapper {
+    width: 100%;
+  }
+
+  /* 4. Fix the Image Section spacing */
+  .biz-image-section {
+    width: 100%;
+    padding: 40px 20px 80px 20px;
+    background-color: #f8f8f8;
+  }
+
+  /* 5. Center the stats card */
+  .biz-stats-card {
+    margin: 0 auto 30px auto;
+    text-align: center;
+  }
+
+  /* 6. Ensure footnote doesn't overlap on mobile/tablet */
+  .biz-footnote {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile Devices (768px) */
+@media (max-width: 768px) {
+  .business-header {
+    padding: 10px 15px;
+  }
+  
+  .biz-main-title {
+    font-size: 28px;
+  }
+
+  .biz-header-right {
+    gap: 10px;
+  }
+
+  .phone-info {
+    display: none; /* Saves space on phone */
+  }
+}
+
+
+
+
+.copyright-inner-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-logo {
+    height: 30px; 
+    width: auto;
+    margin-right: 0 5px; 
+    vertical-align: middle; 
+}
+.copyright-brand-name {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    margin: 0 5px; 
+}
+
+.footer-copyright-bar {
+    text-align: center; 
+}
+.copyright-text {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    display: inline;
 }

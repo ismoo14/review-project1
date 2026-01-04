@@ -10,7 +10,7 @@ const Businesslogin = () => {
         <div className="biz-header-left">
           <Link to="/" className="biz-logo-link">
             <img src={logo} alt="Ethio Mesob" className="biz-logo-img" />
-            <span className="biz-tag">for business</span>
+            <span className="biz-tag">for Business</span>
           </Link>
         </div>
         <div className="biz-header-right">
@@ -48,6 +48,22 @@ const Businesslogin = () => {
           </p>
         </div>
       </main>
+      <div className="footer-copyright-bar">
+                            <div className="copyright-inner-content">
+                                    <span className="copyright-text">
+                        Copyright © 2024 
+                    </span>
+                    
+                    <span className="copyright-brand-name">
+                        Ethio Mesob, Inc.
+                        <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+                    </span>
+            
+                    <span className="copyright-text">
+                        All rights reserved.
+                    </span>
+                                </div>
+                            </div>
     </div>
   );
 };

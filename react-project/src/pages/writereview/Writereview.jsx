@@ -3,6 +3,7 @@ import './writereview.css';
 import logo from '../../assets/logo.png';
 import illustration from '../../assets/illustration.jpg'; 
 import SearchIcon from '@mui/icons-material/Search';
+import img1 from '../../assets/img-10.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Writereview = () => {
@@ -10,10 +11,10 @@ const Writereview = () => {
   const navigate = useNavigate();
 
   const cafes = [
-    { id: 1, name: "Abyssinia Ethiopian Restaurant", location: "Oakland, CA" },
+    { id: 1, name: "Abyssinia Ethiopian Restaurant", location: "Addis Ababa, ET" },
     { id: 2, name: "Tomoca Coffee", location: "Addis Ababa, Ethiopia" },
-    { id: 3, name: "Abyssinian Kitchen", location: "Portland, OR" },
-    { id: 4, name: "Capital One Café", location: "San Francisco, CA" },
+    { id: 3, name: "Abyssinian Kitchen", location: "jimma, OR" },
+    { id: 4, name: "Capital One Café", location: "Adama, OR" },
   ];
 
   const filteredCafes = cafes.filter(cafe =>
@@ -44,9 +45,9 @@ const Writereview = () => {
       <main className="hero-section">
         <div className="hero-content">
           <div className="hero-left">
-            <h1 className="hero-title">Find a business to review</h1>
+            <h1 className="hero-title">Find a Business to review</h1>
             <p className="hero-subtitle">
-              Review anything from your favorite patio spot to your local flower shop.
+              Review anything from your favorite coffee spot to your local cafe.
             </p>
 
             <div className="search-composite">
@@ -76,7 +77,7 @@ const Writereview = () => {
                 <div className="input-divider"></div>
 
                 <div className="input-box location-box">
-                  <input type="text" placeholder="San Francisco, CA" defaultValue="San Francisco, CA" />
+                  <input type="text" placeholder="mercato, Addis" />
                 </div>
               </div>
 
@@ -93,6 +94,46 @@ const Writereview = () => {
           </div>
         </div>
       </main>
+
+      <section className="visited-section">
+        <h2 className="visited-title">Visited one of these places recently?</h2>
+        <div className="visited-grid">
+          {cafes.slice(0, 2).map((cafe) => (
+            <div key={cafe.id} className="visited-card">
+              <div className="card-image-container">
+                <img src={img1} alt={cafe.name} />
+              </div>
+              <div className="card-content">
+                <div className="card-header">
+                  <h3 className="card-name">{cafe.name}</h3>
+                </div>
+                <p className="card-prompt">Do you recommend this business?</p>
+                <div className="card-stars">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <span key={s} className="empty-star">★</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="footer-copyright-bar">
+                          <div className="copyright-inner-content">
+            <span className="copyright-text">
+            Copyright © 2024 
+                    </span>
+                  <span className="copyright-brand-name">
+                    Ethio Mesob, Inc.
+                <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+                </span>
+          
+                <span className="copyright-text">
+                All rights reserved.
+              </span>
+            </div>
+                </div>
     </div>
   );
 };

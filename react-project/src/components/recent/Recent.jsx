@@ -132,7 +132,7 @@ return (
                                 <h3 className="business-name">{activity.businessName}</h3>
                                 
                                 <div className="business-meta-line">
-                                    <div className="star-rating">{renderStars(activity.rating)}</div>
+                                    <div className="star-rating1">{renderStars(activity.rating)}</div>
                                     <span className="category-text">{activity.category}</span>
                                 </div>
                                 

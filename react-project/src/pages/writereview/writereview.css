@@ -60,6 +60,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
+  margin-bottom: 170px;
 }
 
 .hero-content {
@@ -190,8 +191,22 @@
     text-align: center;
     gap: 30px;
     padding-top: 20px;
+    margin-bottom: 120px;
   }
-  
+  .visited-section {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+  .hero-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
   .hero-right {
     width: 100%; /* Ensures the illustration takes full width on mobile */
   }
@@ -228,4 +243,150 @@
     height: 50px;
     margin: 0;
   }
+  .visited-section {
+    margin-top: 90px;
+}
+}
+
+
+.copyright-inner-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.footer-logo {
+    height: 30px; 
+    width: auto;
+    margin-right: 0 5px; 
+    vertical-align: middle; 
+}
+.copyright-brand-name {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    margin: 0 5px; 
+}
+
+.footer-copyright-bar {
+    text-align: center; 
+}
+.copyright-text {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    display: inline;
+}
+
+
+
+
+
+
+
+
+/* Container for the whole section */
+.visited-section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+    margin-top: -120px;
+    margin-bottom: 40px;
+}
+
+.visited-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d2e2f;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Grid for the two cards */
+.visited-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 80px;
+}
+
+/* Individual Card Styling */
+.visited-card {
+    display: flex;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.2s;
+    height: 160px; /* Fixed height for consistency */
+}
+
+.visited-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Left side of card: Image */
+.card-image-container {
+    width: 170px;
+    height: 170px;
+    flex-shrink: 0;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right side of card: Text content */
+.card-content {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: #2d2e2f;
+}
+
+.close-card {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.card-prompt {
+    font-size: 14px;
+    color: #6e7072;
+    margin: 8px 0 12px 0;
+}
+
+/* Stars in the card */
+.card-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.empty-star {
+    font-size: 24px;
+    color: #e6e6e6; /* Grey stars as seen in screenshot */
+    cursor: pointer;
+}
+
+.empty-star:hover {
+    color: #FFC107; /* Turns gold on hover */
 }

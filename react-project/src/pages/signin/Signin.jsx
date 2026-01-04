@@ -57,6 +57,22 @@ const Signin = () => {
         </div>
 
       </div>
+      <div className="footer-copyright-bar">
+                                                    <div className="copyright-inner-content">
+                                                            <span className="copyright-text">
+                                                Copyright © 2024 
+                                            </span>
+                                            
+                                            <span className="copyright-brand-name">
+                                                Ethio Mesob, Inc.
+                                                <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+                                            </span>
+                                    
+                                            <span className="copyright-text">
+                                                All rights reserved.
+                                            </span>
+                                                        </div>
+                                                    </div>
     </div>
   )
 }

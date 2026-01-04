@@ -8,80 +8,103 @@ body, html {
     width: 100%;
     overflow-x: hidden; 
 }
-.hero-content{
-    display: block;
-}
 
 .slider-container {
     width: 100vw; 
     height: 100vh; 
     position: relative;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
+
+/* The Main Container that stacks Top Row and Button vertically */
 .hero-text-overlay {
     position: absolute;
-    top: 27%; 
+    top: 23%; 
     left: 0; 
     right: 0;
     margin: 0 auto; 
     max-width: 1200px; 
     z-index: 30; 
-    padding-left: 80px; 
+    padding-left: 50px; 
+    display: flex;
+    flex-direction: column; /* This pushes the search-cta BELOW the top-layout */
+    align-items: flex-start; 
+    gap: 40px; /* Space between the text and the button */
+}
+
+/* Keeps Loader and Text side-by-side */
+.hero-top-layout {
     display: flex;
     align-items: center; 
-    gap: 37px; 
+    gap: 39px;
 }
+
+.hero-content {
+    display: block;
+}
+
 .hero-phrase {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    max-width: 350px; 
+    max-width: 500px; 
     text-align: left;
     color: white; 
-    font-size: 63px; 
+    font-size: 70px; 
     font-weight: 700; 
-    line-height: 1.1;
-    text-shadow: 0 2px 4px rgba(27, 27, 27, 0.5); 
-    margin-bottom: 15px; 
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); 
 }
+
 .hero-loader {
     display: flex;
     flex-direction: column; 
-    gap: 29px;
+    gap: 40px;
 }
 
 .loader-line {
-    border-radius:20px ;
-    width: 22px;
-    height: 48px; 
-    background-color: rgb(168, 168, 168);
-    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    width: 16px; /* Thinner lines look more modern */
+    height: 52px; 
+    background-color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .loader-line.active {
-    background-color: green; 
+    background-color: #008000; /* Solid Green */
+    width: 14px;
 }
+
+/* The Button Styling */
 .hero-assistant-button {
-    background-color: green; 
+    background-color: #008000; 
     color: white;
     border-radius: 4px;
-    padding: 12px 20px;
+    padding: 13px 28px;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
+    display: flex;
+    align-items: center;
     width: fit-content;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-left: 32px;
+    margin-top: -19px;
 }
+
 .hero-assistant-button:hover {
-    background-color: #c02d2a;
+    background-color: #006400;
+    transform: translateY(-2px);
 }
+
 .cta-search-icon {
-    margin-right: 10px;
-    font-size: 24px !important;
+    margin-right: 12px;
+    font-size: 28px !important;
 }
+
+/* Background Slides */
 .slide {
     position: absolute; 
     top: 0;
@@ -94,28 +117,20 @@ body, html {
     opacity: 0; 
     transition: opacity 1.5s ease-in-out;
 }
+
 .slide.active {
     opacity: 1; 
     z-index: 10; 
 }
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    display: flex;
-    gap: 8px;
-}
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.dot.active-dot, .dot:hover {
-    background-color: #717171;
+
+
+/* Responsive fix */
+@media (max-width: 768px) {
+    .hero-text-overlay {
+        padding-left: 20px;
+        top: 20%;
+    }
+    .hero-phrase {
+        font-size: 40px;
+    }
 }

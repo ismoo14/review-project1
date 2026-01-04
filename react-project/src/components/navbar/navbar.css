@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    margin-top: 3px;
 }
 
 .logo img {
@@ -97,7 +98,7 @@
 
 /* --- BUTTONS --- */
 .write button, .login button, .sign-Up button {
-    padding: 10px 18px;
+    padding: 12px 18px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
@@ -138,7 +139,7 @@
 
 .business {
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 13px 15px;
     border-radius: 4px;
     background-color: #f5f5f5;
 }
@@ -153,32 +154,104 @@
     gap: 6px;
 }
 
-.dropdown-menu {
-    position: absolute; 
-    top: 110%; 
-    left: 50%;
-    transform: translateX(-50%); 
-    background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
-    border-radius: 4px;
-    padding: 10px 0;
-    z-index: 1000;
-    min-width: 240px;
+/* --- Dropdown Container --- */
+.dropdown-container {
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* --- The Main Button --- */
+.dropdown-btn {
+    background: transparent;
+    color: #2d2e2f;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-btn.active {
+    color: #008000; /* Ethio Mesob Green */
+}
+
+/* --- The Animated Arrow --- */
+.arrow-icon {
+    font-size: 10px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.7;
+}
+
+.dropdown-btn.active .arrow-icon {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* --- The Dropdown Menu Card --- */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: -26px;
+    background: #ffffff;
+    min-width: 240px;
+    border-radius: 12px;
+    /* Soft elevation shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 
+                0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    z-index: 2000;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Entrance Animation */
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Individual Items --- */
 .dropdown-item {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 12px 14px;
     text-decoration: none;
-    color: #333;
+    color: #484848;
     font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    gap: 12px;
 }
 
 .dropdown-item:hover {
-    background-color: #f5f5f5;
-    color: #0073bb;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+/* --- Icon Styling within Menu --- */
+.item-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #6a1b9a; /* Purple color from your screenshot */
+    transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover .item-icon {
+    transform: scale(1.1);
 }
 
 /* --- HAMBURGER ICON --- */

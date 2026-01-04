@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./navbar.css";
 import { useNavigate, Link } from 'react-router-dom';
 import logo from "../../assets/logo.png";
@@ -10,6 +10,7 @@ const Navbar = () => {
     const [location, setLocation] = useState("");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const navigate = useNavigate();
+    const dropdownRef = useRef(null);
 
     const toggleDropdown = () => setIsDropdownOpen(prev => !prev);
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
@@ -22,24 +23,37 @@ const Navbar = () => {
         { id: 5, name: "Abyssinia Market", location: "Oakland, CA", rating: 4.5, reviews: 55 },
     ];
 
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-        const term = searchTerm.toLowerCase().trim();
-        const loc = location.toLowerCase().trim();
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
 
-        if (loc !== "") {
-            navigate(`/locationpage?find_desc=${searchTerm}&find_loc=${location}`);
-            setIsMenuOpen(false); // Close menu on search
-            return;
-        }
-        const foundCafe = cafes.find(c => c.name.toLowerCase() === term);
-        if (foundCafe) {
-            navigate('/cafe-page', { state: { cafeData: foundCafe } });
-        } else if (term !== "") {
-            navigate(`/locationpage?find_desc=${searchTerm}&find_loc=`);
-        }
-        setIsMenuOpen(false);
-    };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const term = searchTerm.toLowerCase().trim();
+    const loc = location.toLowerCase().trim();
+
+    let filterType = "";
+
+    // Exact Mapping Logic
+    if (term === "coffee") {
+        filterType = "Coffee House";
+    } else if (term === "cafe") {
+        filterType = "Cafe";
+    } else {
+        filterType = searchTerm; // Fallback for other searches
+    }
+
+    // Navigate to location page with the specific description
+    navigate(`/locationpage?find_desc=${encodeURIComponent(filterType)}&find_loc=${encodeURIComponent(loc)}`);
+    setIsMenuOpen(false);
+};
 
     return (
         <div className='navbar'>
@@ -89,7 +103,9 @@ const Navbar = () => {
                     <div className="business-dropdown-container">
                         <div className="business" onClick={toggleDropdown}>
                             <h5>Ethio Mesob for business
-                                <span className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>▼</span>
+                                <span className={`arrow ${isDropdownOpen ? 'up' : 'down'}`}>
+                        {isDropdownOpen ? '▲' : '▼'}
+                    </span>
                             </h5>
                         </div>
                         {isDropdownOpen && (

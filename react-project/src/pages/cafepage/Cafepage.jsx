@@ -17,6 +17,7 @@ import { useLocation, Link } from 'react-router-dom';
 const Cafepage = () => {
   const location = useLocation();
   const menuSliderRef = useRef(null);
+  
   const scrollMenu = (direction) => {
     if (menuSliderRef.current) {
       const { scrollLeft, clientWidth } = menuSliderRef.current;
@@ -45,7 +46,7 @@ const Cafepage = () => {
 
   const popularDishes = [
     { name: "Meat Combo", price: "$22.00", img: img5 },
-    { name: "Veggie Plate", price: "$22.00", img:img6 },
+    { name: "Veggie Plate", price: "$22.00", img: img6 },
     { name: "Doro Wat", price: "$18.00", img: img7 },
   ];
 
@@ -64,27 +65,27 @@ const Cafepage = () => {
     },
     {
       userImg: pic2,
-      user: "Alana E.",
-      location: "Davis, CA",
-      status: "Elite 25",
-      stats: { friends: 8, reviews: 123, photos: 94 },
-      rating: 4,
-      date: "Sep 25, 2025",
-      text: "Pulled up for a friend's birthday dinner. The restaurant is located in a strip mall with ample parking and has brightly colored walls and beaded curtains that make it feel very private. Food was delicious - heavier than expected, though well-seasoned and hearty.",
+      user: "Rahmet M.",
+      location: "Oakland, CA",
+      status: "",
+      stats: { friends: 12, reviews: 45, photos: 10 },
+      rating: 5,
+      date: "Dec 2, 2023",
+      text: "The service is excellent, they are always very attentive and the flavors are authentic. Highly recommend the meat combo!",
       dishImg: img2, 
-      dishName: "Chicken stir fry"
+      dishName: "Meat Combo"
     },
     {
       userImg: pic3,
-      user: "Alana E.",
-      location: "Davis, CA",
+      user: "Siham M.",
+      location: "Sacramento, CA",
       status: "Elite 25",
-      stats: { friends: 8, reviews: 123, photos: 94 },
-      rating: 4,
-      date: "Sep 25, 2025",
-      text: "Pulled up for a friend's birthday dinner. The restaurant is located in a strip mall with ample parking and has brightly colored walls and beaded curtains that make it feel very private. Food was delicious - heavier than expected, though well-seasoned and hearty.",
+      stats: { friends: 24, reviews: 89, photos: 150 },
+      rating: 5,
+      date: "Apr 2, 2025",
+      text: "Best Ethiopian spot in the area. The doro wat is perfectly spiced and the injera is always fresh.",
       dishImg: img3, 
-      dishName: "Chicken stir fry"
+      dishName: "Doro Wat"
     },
   ];
 
@@ -99,8 +100,12 @@ const Cafepage = () => {
             </Link>
           </div>
           <div className="navbar-right">
-            <button className="nav-btn login-btn">Login</button>
-            <button className="nav-btn signup-btn">Sign Up</button>
+            <Link to="/login">
+                    <button className="nav-btn login-btn">Login</button>
+            </Link>
+            <Link to="/signin">
+              <button className="nav-btn signup-btn">Sign Up</button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -135,17 +140,17 @@ const Cafepage = () => {
       {/* ACTION BAR */}
       <div className="action-bar">
         <Link to="/writereveiw">
-            <button type="button" className="write-review-btn">
-                  ★ Write a review
-            </button>
-          </Link>
+          <button type="button" className="write-review-btn">
+            ★ Write a review
+          </button>
+        </Link>
       </div>
 
       {/* MAIN CONTENT */}
       <div className="main-content-container">
         <div className="left-column">
           
-          {/* SECTION 1: CLICKABLE MENU CATEGORIES */}
+          {/* SECTION 1: MENU CATEGORIES */}
           <div className="menu-header">
             <h2>Our Menu</h2>
           </div>
@@ -166,7 +171,7 @@ const Cafepage = () => {
 
           <hr className="section-divider" />
 
-          {/* SECTION 2: AUTO-SLIDING POPULAR DISHES */}
+          {/* SECTION 2: POPULAR DISHES */}
           <div className="menu-header">
             <h2>Popular Dishes</h2>
           </div>
@@ -191,38 +196,48 @@ const Cafepage = () => {
 
           <hr className="section-divider" />
 
-          {/* SECTION 3: REVIEWS (BELOW SLIDERS) */}
+          {/* SECTION 3: REVIEWS - REFRESHED FOR RESPONSIVENESS */}
           <div className="reviews-container">
             <h3>Recommended Reviews</h3>
             {reviewsData.map((review, index) => (
               <div className="review-card" key={index}>
+                {/* Sidebar with Profile Header wrapper */}
                 <div className="review-sidebar">
-                  {review.userImg ? (
-                    <img src={review.userImg} alt={review.user} className="user-avatar-img" />
-                  ) : (
-                    <div className="user-avatar-placeholder"></div>
-                  )}
-                  <div className="user-avatar-placeholder"></div>
-                  <div className="user-info-text">
-                    <p className="user-name">{review.user} <span className="elite-tag">{review.status}</span></p>
-                    <p className="user-location">{review.location}</p>
-                    <p className="user-stats">
-                      <span>👤 {review.stats.friends}</span> 
-                      <span>⭐ {review.stats.reviews}</span> 
-                      <span>📷 {review.stats.photos}</span>
-                    </p>
+                  <div className="user-profile-header">
+                    {review.userImg ? (
+                      <img src={review.userImg} alt={review.user} className="user-avatar-img" />
+                    ) : (
+                      <div className="user-avatar-placeholder"></div>
+                    )}
+                    <div className="user-info-text">
+                      <p className="user-name">
+                        {review.user} 
+                        {review.status && <span className="elite-tag">{review.status}</span>}
+                      </p>
+                      <p className="user-location">{review.location}</p>
+                      <div className="user-stats">
+                        <span>👤 {review.stats.friends}</span> 
+                        <span>⭐ {review.stats.reviews}</span> 
+                        <span>📷 {review.stats.photos}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {/* Main Content */}
                 <div className="review-main">
                   <div className="review-rating-row">
-                    <span className="stars-red">★★★★☆</span>
+                    <span className="stars-red">★★★★★</span>
                     <span className="review-date">{review.date}</span>
                   </div>
                   <p className="review-text">{review.text}</p>
-                  <div className="review-photo-attachment">
-                    <img src={review.dishImg} alt={review.dishName} />
-                    <span className="photo-label">{review.dishName}</span>
-                  </div>
+                  
+                  {review.dishImg && (
+                    <div className="review-photo-attachment">
+                      <img src={review.dishImg} alt={review.dishName} />
+                      <span className="photo-label">{review.dishName}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -237,10 +252,10 @@ const Cafepage = () => {
                 <iframe
                   title="Cafe Location"
                   width="100%"
-                  height="550"
+                  height="450"
                   frameBorder="0"
                   style={{ border: 0, borderRadius: '8px 8px 0 0' }}
-                  src="https://maps.google.com/maps?q=1346%20Fulton%20Ave,%20Sacramento,%20CA%2095825&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.663363321523!2d-121.3942369234857!3d38.601968871787474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada381e427181%3A0x708a3832c3821016!2s1346%20Fulton%20Ave%2C%20Sacramento%2C%20CA%2095825!5e0!3m2!1sen!2sus!4v1700000000000"
                   allowFullScreen
                 ></iframe>
               </div>
@@ -267,6 +282,22 @@ const Cafepage = () => {
           </div>
         </div>
       </div>
+      <div className="footer-copyright-bar">
+                                  <div className="copyright-inner-content">
+                                          <span className="copyright-text">
+                              Copyright © 2024 
+                          </span>
+                          
+                          <span className="copyright-brand-name">
+                              Ethio Mesob, Inc.
+                              <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+                          </span>
+                  
+                          <span className="copyright-text">
+                              All rights reserved.
+                          </span>
+                                      </div>
+                                  </div>
     </div>
   );
 };

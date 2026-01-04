@@ -19,7 +19,7 @@ const Catagory = () => {
 return (
     <div className="category-section-wrapper">
             <div className="container">
-                <h2 className="section-title">
+                <h2 className="section-title1">
                     Catagories
                 </h2>
                 
