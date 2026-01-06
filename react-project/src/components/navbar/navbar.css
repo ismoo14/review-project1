@@ -53,12 +53,12 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.input-group {
+.input-group1 {
     flex: 1;
     padding: 0 15px;
 }
 
-.input-group input {
+.input-group1 input {
     width: 100%;
     border: none;
     outline: none;

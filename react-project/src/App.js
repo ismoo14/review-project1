@@ -10,6 +10,7 @@ import Signin from "./pages/signin/Signin"
 import Reviewpage from "./pages/reviewpage/Reviewpage";
 import Cafepage from "./pages/cafepage/Cafepage";
 import Locationpage from "./pages/locationpage/Locationpage";
+import Businessprofile from "./pages/businessprofile/Businessprofile";
 
 function App() {
   
@@ -52,7 +53,10 @@ function App() {
       path: "/locationpage",
       element: <Locationpage />
     },
-    
+    {
+      path: "/businessprofile",
+      element: <Businessprofile />
+    },
   ])
   return (
     <div className="App">

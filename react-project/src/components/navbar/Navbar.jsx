@@ -68,7 +68,7 @@ const Navbar = () => {
                 {/* SEARCH FORM */}
                 <div className="form">
                     <form onSubmit={handleSearchSubmit} className="search-bar-pill">
-                        <div className="input-group what">
+                        <div className="input-group1 what">
                             <input 
                                 type="text" 
                                 placeholder='coffee place, cafe'
@@ -77,7 +77,7 @@ const Navbar = () => {
                             />
                         </div>
                         <div className="search-divider"></div>
-                        <div className="input-group where">
+                        <div className="input-group1 where">
                             <input 
                                 type="text" 
                                 placeholder='Mercato, Addis Ababa'

@@ -1,0 +1,788 @@
+/* --- RESET & GLOBAL --- */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fcfcfc;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* --- SIDEBAR NAVIGATION --- */
+.dashboard-sidebar {
+    width: 280px;
+    background: #ffffff;
+    border-right: 1px solid #ededed;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+.sidebar-logo img {
+    width: 130px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: 20px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-item {
+    padding: 12px 18px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #6e7072;
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s all ease;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    background: #fdf2f2;
+    color: #008000 !important; /* Ethio Mesob Green */
+    font-weight: 700;
+}
+
+.nav-item:hover {
+    background: #f9f9f9;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.dashboard-main {
+    margin-left: 280px;
+    flex: 1;
+    padding: 40px 60px;
+    max-width: 1200px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2d2e2f;
+    margin: 0;
+}
+
+/* --- CARDS & GRIDS --- */
+.dashboard-card {
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: #2d2e2f;
+    font-weight: 700;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* --- MENU TABLE STYLES --- */
+.menu-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.menu-table th {
+    padding: 16px;
+    background: #f8f9fa;
+    color: #6e7072;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ededed;
+    text-align: left;
+}
+
+.menu-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.dish-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dish-img-thumbnail, .dish-img-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.price-text {
+    font-weight: 700;
+    color: #008000;
+}
+
+/* --- STATUS BADGES --- */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-badge.in-stock { background: #e6f4ea; color: #1e7e34; }
+.status-badge.out-of-stock { background: #fce8e8; color: #d32323; }
+
+/* --- MODAL (ADD NEW DISH) --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 480px;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6e7072;
+}
+
+.dish-image-upload-area {
+    width: 100%;
+    height: 180px;
+    background: #f8f9fa;
+    border: 2px dashed #dcdcdc;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.dish-img-label {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dish-preview-large {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background: white;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* --- BUTTONS --- */
+.save-all-btn, .add-item-btn, .confirm-add-btn {
+    background: #008000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.save-all-btn:hover, .add-item-btn:hover {
+    background: #006400;
+    transform: translateY(-1px);
+}
+
+.cancel-btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.delete-icon-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.delete-icon-btn:hover {
+    color: #d32323;
+    background: #fff0f0;
+}
+
+/* --- BRANDING EDITOR --- */
+.branding-editor {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.banner-edit-container {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+}
+
+.logo-edit-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: absolute;
+    bottom: -40px;
+    left: 40px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    z-index: 5;
+}
+
+.edit-btn {
+    background-color: #ffffff;
+    border: 1.5px solid #ededed;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #fdf2f2;
+    border-color: #008000;
+    color: #008000;
+    transform: translateY(-1px);
+}
+
+.delete-icon-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.delete-icon-btn:hover {
+    color: #d32323;
+    background: #fff0f0;
+}
+
+.banner-edit-container:hover .edit-overlay,
+.logo-edit-container:hover .edit-overlay {
+    opacity: 1;
+}
+
+/* --- REVIEWS FEED --- */
+.cafe-banner {
+    position: relative;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cafe-banner img { width: 100%; height: 100%; object-fit: cover; }
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 30px;
+    color: white;
+}
+
+.feed-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d2e2f;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.feed-item {
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.feed-item:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.rev-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.rev-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.rev-user-name {
+    display: block;
+    font-weight: 700;
+    color: #2d2e2f;
+    font-size: 15px;
+}
+
+.rev-date {
+    display: block;
+    font-size: 13px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.rev-stars-row {
+    display: flex;
+    gap: 2px;
+}
+
+.rev-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin: 15px 0;
+}
+
+/* Review Image Container */
+.reviewed-food-container {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.reviewed-food-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.reviewed-food-container:hover .reviewed-food-img {
+    transform: scale(1.05);
+}
+
+/* Dish Tag Badge */
+.photo-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2d2e2f;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- DASHBOARD CARDS & STATS --- */
+.dashboard-card {
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.rating-summary-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff9f0 0%, #fff4e6 100%);
+    border-radius: 16px;
+    border: 1px solid #ffeeba;
+    margin-bottom: 40px;
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 900;
+    color: #2d2e2f;
+}
+
+.stat-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.star-filled { color: #FFC107 !important; font-size: 24px !important; }
+.star-empty { color: #dcdcdc !important; font-size: 24px !important; }
+/* --- ANIMATIONS --- */
+.animate-fade-in {
+    animation: fadeIn 0.35s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FORMS --- */
+/* --- GENERAL INFO & BRANDING --- */
+.dashboard-card {
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.branding-editor {
+    position: relative;
+    margin-bottom: 60px; /* Space for the overlapping logo */
+}
+
+/* Banner Container Fix */
+.banner-edit-container {
+    width: 100%;
+    height: 240px; /* Adjusted height for better proportions */
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+}
+
+.banner-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the area without distortion */
+    object-position: center; /* Keeps the center of the image visible */
+    display: block;
+}
+
+/* Logo Overlap Fix */
+.logo-edit-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid white; /* Thick white border to separate from banner */
+    position: absolute;
+    bottom: -50px; /* Offset to sit halfway on the banner */
+    left: 40px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    z-index: 5;
+}
+
+.logo-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Good for logos with transparent backgrounds */
+    padding: 10px; /* Breathing room for the logo */
+}
+
+/* --- FORM LAYOUT FIX --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2d2e2f;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #008000;
+    box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.05);
+    outline: none;
+}
+
+
+
+/* --- DISH IMAGE UPLOAD AREA (MODAL) --- */
+.dish-image-upload-area {
+    width: 100%;
+    height: 200px;
+    background: #fcfcfc;
+    border: 2px dashed #dcdcdc;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dish-image-upload-area:hover {
+    border-color: #008000;
+    background: #f9fdf9;
+}
+
+.dish-preview-large {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- TABLE THUMBNAIL STYLING --- */
+.dish-img-thumbnail {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #f0f0f0;
+    border: 1px solid #eee;
+}
+
+/* Hide the native input */
+.hidden-file-input {
+    display: none;
+}
+
+
+
+
+
+
+/* --- [REMAINING ORIGINAL CSS ABOVE...] --- */
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Tablet & Smaller Desktop (below 1100px) */
+@media (max-width: 1100px) {
+    .dashboard-main {
+        padding: 30px;
+    }
+}
+
+/* Tablets & Large Phones (below 768px) */
+@media (max-width: 768px) {
+    .dashboard-wrapper {
+        flex-direction: column; /* Stack sidebar on top of content */
+    }
+
+    /* --- SIDEBAR MOBILE --- */
+    .dashboard-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 20px;
+        border-right: none;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .sidebar-logo img {
+        width: 100px;
+        margin-bottom: 15px;
+        margin-left: 0;
+    }
+
+    .sidebar-nav {
+        flex-direction: row; /* Horizontal menu on mobile */
+        overflow-x: auto; /* Scroll if tabs too many */
+        padding-bottom: 10px;
+        gap: 10px;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+        padding: 8px 15px;
+        font-size: 14px;
+        width: auto;
+    }
+
+    /* --- MAIN CONTENT MOBILE --- */
+    .dashboard-main {
+        margin-left: 0; /* Remove sidebar margin */
+        padding: 20px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+    /* --- BRANDING MOBILE --- */
+    .banner-edit-container {
+        height: 160px;
+    }
+
+    .logo-edit-container {
+        width: 90px;
+        height: 90px;
+        left: 20px;
+        bottom: -35px;
+    }
+
+    /* --- TABLE RESPONSIVENESS (SCROLLABLE) --- */
+    .menu-table-container {
+        overflow-x: auto; /* Allow side-scrolling for the table */
+        display: block;
+    }
+
+    .menu-table {
+        min-width: 600px; /* Force minimum width to prevent squishing */
+    }
+
+    /* --- REVIEWS MOBILE --- */
+    .rev-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rating-summary-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* --- MODAL MOBILE --- */
+    .modal-content {
+        width: 90%;
+        margin: 10px;
+        padding: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Small Phones (below 480px) */
+@media (max-width: 480px) {
+    .info-grid {
+        grid-template-columns: 1fr; /* Single column for forms */
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-footer button {
+        width: 100%;
+    }
+
+    .reviewed-food-container {
+        max-width: 100%; /* Full width food photos on mobile */
+        height: 180px;
+    }
+}
