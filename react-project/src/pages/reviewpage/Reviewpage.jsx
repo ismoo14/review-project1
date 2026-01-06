@@ -17,6 +17,14 @@ const Reviewpage = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [reviewText, setReviewText] = useState("");
+  const [foodImage, setFoodImage] = useState(null); // New state
+
+const handleImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    setFoodImage(URL.createObjectURL(file)); // Create a local preview URL
+  }
+};
 
   const getRatingText = (value) => {
     switch (value) {
@@ -136,6 +144,28 @@ const Reviewpage = () => {
         <div className="tags">
           <span>Food</span> <span>Service</span> <span>Ambiance</span>
         </div>
+        <div className="review-upload-container">
+  <label htmlFor="food-upload" className="image-upload-box">
+    {foodImage ? (
+      <img src={foodImage} alt="Food Preview" className="uploaded-preview" />
+    ) : (
+      <div className="upload-placeholder">
+        <div className="camera-icon-circle">
+           {/* You can use a Material UI icon here or a simple svg */}
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <span>Add a photo of your food</span>
+      </div>
+    )}
+  </label>
+  <input 
+    type="file" 
+    id="food-upload" 
+    accept="image/*" 
+    onChange={handleImageChange} 
+    style={{ display: 'none' }} 
+  />
+</div>
         <textarea 
           placeholder="Start your review..."
           value={reviewText}

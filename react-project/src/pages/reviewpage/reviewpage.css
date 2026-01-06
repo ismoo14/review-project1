@@ -421,6 +421,72 @@ textarea {
     border-bottom: 1px solid #eee;
 }
 
+/* --- IMAGE UPLOAD STYLES --- */
+.review-upload-container {
+  margin: 15px 0;
+}
+
+.image-upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  border: 2px dashed #dcdcdc;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.image-upload-box:hover {
+  border-color: #008000; /* Ethio Mesob Green */
+  background-color: #f9fdf9;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6e7072;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.camera-icon-circle {
+  background: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+  color: #008000;
+}
+
+.uploaded-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Enhancing the textarea look */
+textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #008000;
+}
+
 .rev-preview {
     font-family: 'Inter', sans-serif;
     font-size: 15px;

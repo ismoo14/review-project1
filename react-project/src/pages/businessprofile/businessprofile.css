@@ -26,13 +26,13 @@ body {
     width: 130px;
     margin-bottom: 40px;
     display: block;
-    margin-left: 20px;
+    margin-left: 48px;
 }
 
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 11px;
 }
 
 .nav-item {
@@ -43,7 +43,7 @@ body {
     color: #6e7072;
     font-weight: 500;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 17px;
     transition: 0.2s all ease;
     display: block;
     width: 100%;
@@ -52,7 +52,7 @@ body {
 
 .nav-item.active {
     background: #fdf2f2;
-    color: #008000 !important; /* Ethio Mesob Green */
+    color: #008000 !important; 
     font-weight: 700;
 }
 
@@ -163,10 +163,15 @@ body {
     display: inline-block;
 }
 
-.status-badge.in-stock { background: #e6f4ea; color: #1e7e34; }
-.status-badge.out-of-stock { background: #fce8e8; color: #d32323; }
+.status-badge.in-stock { 
+    background: #e6f4ea; 
+    color: #1e7e34; 
+}
+.status-badge.out-of-stock { 
+    background: #fce8e8; 
+    color: #d32323; 
+}
 
-/* --- MODAL (ADD NEW DISH) --- */
 .modal-backdrop {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -295,6 +300,7 @@ body {
     overflow: hidden;
     position: relative;
     background: #eee;
+    cursor: pointer;
 }
 
 .logo-edit-container {
@@ -309,6 +315,7 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow: hidden;
     z-index: 5;
+    cursor: pointer;
 }
 
 .edit-btn {
@@ -523,7 +530,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- FORMS --- */
 /* --- GENERAL INFO & BRANDING --- */
 .dashboard-card {
     background: #fff;
@@ -535,13 +541,13 @@ body {
 
 .branding-editor {
     position: relative;
-    margin-bottom: 60px; /* Space for the overlapping logo */
+    margin-bottom: 60px; 
 }
 
 /* Banner Container Fix */
 .banner-edit-container {
     width: 100%;
-    height: 240px; /* Adjusted height for better proportions */
+    height: 240px; 
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -552,8 +558,8 @@ body {
 .banner-preview-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills the area without distortion */
-    object-position: center; /* Keeps the center of the image visible */
+    object-fit: cover; 
+    object-position: center;
     display: block;
 }
 
@@ -562,9 +568,9 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 6px solid white; /* Thick white border to separate from banner */
+    border: 6px solid white; 
     position: absolute;
-    bottom: -50px; /* Offset to sit halfway on the banner */
+    bottom: -50px; 
     left: 40px;
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -575,8 +581,8 @@ body {
 .logo-preview-img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Good for logos with transparent backgrounds */
-    padding: 10px; /* Breathing room for the logo */
+    object-fit: contain; 
+    padding: 10px; 
 }
 
 /* --- FORM LAYOUT FIX --- */
@@ -656,14 +662,6 @@ body {
 }
 
 
-
-
-
-
-/* --- [REMAINING ORIGINAL CSS ABOVE...] --- */
-
-/* --- RESPONSIVE ADJUSTMENTS --- */
-
 /* Tablet & Smaller Desktop (below 1100px) */
 @media (max-width: 1100px) {
     .dashboard-main {
@@ -674,10 +672,8 @@ body {
 /* Tablets & Large Phones (below 768px) */
 @media (max-width: 768px) {
     .dashboard-wrapper {
-        flex-direction: column; /* Stack sidebar on top of content */
+        flex-direction: column; 
     }
-
-    /* --- SIDEBAR MOBILE --- */
     .dashboard-sidebar {
         width: 100%;
         height: auto;
@@ -694,8 +690,8 @@ body {
     }
 
     .sidebar-nav {
-        flex-direction: row; /* Horizontal menu on mobile */
-        overflow-x: auto; /* Scroll if tabs too many */
+        flex-direction: row;
+        overflow-x: auto; 
         padding-bottom: 10px;
         gap: 10px;
     }
@@ -709,7 +705,7 @@ body {
 
     /* --- MAIN CONTENT MOBILE --- */
     .dashboard-main {
-        margin-left: 0; /* Remove sidebar margin */
+        margin-left: 0; 
         padding: 20px;
     }
 
@@ -737,12 +733,12 @@ body {
 
     /* --- TABLE RESPONSIVENESS (SCROLLABLE) --- */
     .menu-table-container {
-        overflow-x: auto; /* Allow side-scrolling for the table */
+        overflow-x: auto; 
         display: block;
     }
 
     .menu-table {
-        min-width: 600px; /* Force minimum width to prevent squishing */
+        min-width: 600px; 
     }
 
     /* --- REVIEWS MOBILE --- */
@@ -770,7 +766,7 @@ body {
 /* Small Phones (below 480px) */
 @media (max-width: 480px) {
     .info-grid {
-        grid-template-columns: 1fr; /* Single column for forms */
+        grid-template-columns: 1fr; 
     }
 
     .modal-footer {
@@ -782,7 +778,7 @@ body {
     }
 
     .reviewed-food-container {
-        max-width: 100%; /* Full width food photos on mobile */
+        max-width: 100%;
         height: 180px;
     }
 }
