@@ -92,12 +92,37 @@
     margin-bottom: 10px;
 }
 
-.star-rating1 .star-icon {
-    font-size: 16px !important;
+/* --- Corrected Star Rating Styling --- */
+.star-rating1 {
+    display: flex;
+    gap: 2px; /* Small gap between stars */
+    align-items: center;
 }
 
+.star-rating1 .star-icon {
+    font-size: 16px !important;
+    padding: 2px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Default filled star color (Red like your 2nd screenshot) */
+    background-color: rgb(233, 152, 3); 
+    color: white !important; /* Makes the star symbol white */
+}
+
+
+
 .star-rating1 .star-icon.empty {
-    color: #e0e0e0;
+    background-color: #e0e0e0; /* Grey for empty stars */
+    color: white !important;
+}
+
+/* Adjustment for the meta line to align text */
+.business-meta-line {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
 }
 
 .category-text {

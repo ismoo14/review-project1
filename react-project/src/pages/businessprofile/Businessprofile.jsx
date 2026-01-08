@@ -9,7 +9,21 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
+import img3 from '../../assets/img-3.jpg';
+import img2 from '../../assets/img-1.jpg';
+import img1 from '../../assets/img-13.jpg';
+import img5 from '../../assets/img-5.jpg';
+import img6 from '../../assets/img-7.jpg';
+import img7 from '../../assets/img-1.jpg';
+import img9 from '../../assets/cafe-2.jpg';
+import pic1 from '../../assets/pic-1.jpg';
+import pic2 from '../../assets/pic-2.jpg';
+import pic3 from '../../assets/pic-3.jpg';
 import { Link } from 'react-router-dom';
+import img66 from '../../assets/img-6.jpg';
+import img55 from '../../assets/img-5.jpg';
+import img99 from '../../assets/img-9.jpg';
+import cafeimg from '../../assets/cafe1-img.jpg';
 
 const Businessprofile = () => {
   // 1. Navigation & UI State
@@ -19,9 +33,9 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   // 2. State for Business Information
 const [businessInfo, setBusinessInfo] = useState({
     name: "Abyssinia Ethiopian Restaurant",
-    location: "Addis Ababa, Bole Atlas",
+    location: "Jimma, Mercato",
     phone: "+251 911 000 000",
-    banner: null,
+    banner: cafeimg,
     logo: null
 });
 
@@ -29,29 +43,41 @@ const [businessInfo, setBusinessInfo] = useState({
 const [reviews] = useState([
     { 
       id: 1, 
-      user: "I L.", 
-      userPic: "https://randomuser.me/api/portraits/women/44.jpg",
-      foodPic: "https://images.unsplash.com/photo-1548029960-695d127f4543?q=80&w=500",
+      user: "Alana E.", 
+      userPic: pic1,
+      foodPic: img6,
       rating: 5, 
       date: "Dec 4, 2025", 
-      text: "Love the wonderful vegan options at Abyssinia's Ethiopian Restaurant. The traditionally made injera is perfect for scooping up the delicious mesir wat!" 
+      text: "Love the wonderful beyaynet at Abyssinia's Ethiopian Restaurant. The traditionally made injera is perfect for scooping up the delicious mesir wat!" 
     },
     { 
       id: 2, 
-      user: "Alana E.", 
-      userPic: "https://randomuser.me/api/portraits/women/68.jpg",
-      foodPic: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=500",
+      user: "Rahmet M.", 
+      userPic: pic2,
+      foodPic: img7,
       rating: 4, 
       date: "Sep 25, 2025", 
       text: "Pulled up for a friend's birthday dinner. The Doro Wat was incredibly flavorful and the service was top-notch." 
+    },
+    { 
+      id: 3, 
+      user: "Siham M.", 
+      userPic: pic3,
+      foodPic: img9,
+      rating: 4, 
+      date: "Sep 25, 2025", 
+      text: "Pulled up for a friend's birthday dinner. The Tibis was incredibly flavorful and the service was top-notch." 
     }
 ]);
 
   // 4. State for Menu Data
 const [menuItems, setMenuItems] = useState([
-    { id: 1, name: "Special Kitfo", price: "450 ETB", cat: "Beef", status: "In Stock", img: 'https://images.unsplash.com/photo-1548029960-695d127f4543?q=80&w=500' },
-    { id: 2, name: "Veggie Combo", price: "320 ETB", cat: "Vegan", status: "In Stock", img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=500" },
-    { id: 3, name: "Doro Wat", price: "550 ETB", cat: "Poultry", status: "Out of Stock", img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=500" },
+    { id: 1, name: "Special Kitfo", price: "450 ETB", cat: "Beef", status: "In Stock", img: img3 },
+    { id: 2, name: "Beyaynet", price: "320 ETB", cat: "Vegan", status: "In Stock", img: img1 },
+    { id: 3, name: "Doro Wat", price: "550 ETB", cat: "Poultry", status: "Out of Stock", img: img2 },
+    { id: 4, name: "Gomen", price: "150 ETB", cat: "Beef", status: "In Stock", img: img55 },
+    { id: 5, name: "kitfo", price: "350 ETB", cat: "Vegan", status: "In Stock", img: img66 },
+    { id: 6, name: "Agelgel", price: "200 ETB", cat: "Poultry", status: "Out of Stock", img: img99 },
 ]);
 
   // 5. State for "New Dish" Form

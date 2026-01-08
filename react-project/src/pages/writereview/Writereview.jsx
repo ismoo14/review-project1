@@ -3,18 +3,24 @@ import './writereview.css';
 import logo from '../../assets/logo.png';
 import illustration from '../../assets/illustration.jpg'; 
 import SearchIcon from '@mui/icons-material/Search';
-import img1 from '../../assets/img-10.jpg';
 import { Link, useNavigate } from 'react-router-dom';
+
+// Import 4 unique images for the visited section
+import img1 from '../../assets/img-1.jpg';
+import img2 from '../../assets/img-2.jpg';
+import img3 from '../../assets/img-3.jpg';
+import img4 from '../../assets/img-4.jpg';
 
 const Writereview = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
+  // Updated cafes data with unique images
   const cafes = [
-    { id: 1, name: "Abyssinia Ethiopian Restaurant", location: "Addis Ababa, ET" },
-    { id: 2, name: "Tomoca Coffee", location: "Addis Ababa, Ethiopia" },
-    { id: 3, name: "Abyssinian Kitchen", location: "jimma, OR" },
-    { id: 4, name: "Capital One Café", location: "Adama, OR" },
+    { id: 1, name: "Abyssinia Ethiopian Restaurant", location: "Addis Ababa, ET", image: img1 },
+    { id: 2, name: "Tomoca Coffee", location: "Addis Ababa, Ethiopia", image: img2 },
+    { id: 3, name: "Kategna Ethio-Cuisine", location: "Jimma, OR", image: img3 },
+    { id: 4, name: "Yod Abyssinia", location: "Adama, OR", image: img4 },
   ];
 
   const filteredCafes = cafes.filter(cafe =>
@@ -22,8 +28,14 @@ const Writereview = () => {
     cafe.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleSelectCafe = (cafe) => {
-    navigate('/review-page', { state: { selectedCafe: cafe } });
+  const handleSelectCafe = (cafe, initialRating = 0) => {
+    // We pass the cafe AND an optional initial rating to the next page
+    navigate('/review-page', { 
+      state: { 
+        selectedCafe: cafe,
+        initialRating: initialRating 
+      } 
+    });
   };
 
   return (
@@ -59,7 +71,6 @@ const Writereview = () => {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  {/* Suggestions list stays inside the relative container */}
                   {filteredCafes.length > 0 && (
                     <div className="suggestions-list">
                       {filteredCafes.map((cafe) => (
@@ -77,7 +88,7 @@ const Writereview = () => {
                 <div className="input-divider"></div>
 
                 <div className="input-box location-box">
-                  <input type="text" placeholder="mercato, Addis" />
+                  <input type="text" placeholder="Mercato, Addis" />
                 </div>
               </div>
 
@@ -98,19 +109,25 @@ const Writereview = () => {
       <section className="visited-section">
         <h2 className="visited-title">Visited one of these places recently?</h2>
         <div className="visited-grid">
-          {cafes.slice(0, 2).map((cafe) => (
+          {cafes.slice(0, 4).map((cafe) => (
             <div key={cafe.id} className="visited-card">
-              <div className="card-image-container">
-                <img src={img1} alt={cafe.name} />
+              <div className="card-image-container" onClick={() => handleSelectCafe(cafe)}>
+                <img src={cafe.image} alt={cafe.name} />
               </div>
               <div className="card-content">
                 <div className="card-header">
-                  <h3 className="card-name">{cafe.name}</h3>
+                  <h3 className="card-name" onClick={() => handleSelectCafe(cafe)}>{cafe.name}</h3>
                 </div>
                 <p className="card-prompt">Do you recommend this business?</p>
                 <div className="card-stars">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <span key={s} className="empty-star">★</span>
+                  {[1, 2, 3, 4, 5].map((starValue) => (
+                    <span 
+                      key={starValue} 
+                      className="empty-star-interactive"
+                      onClick={() => handleSelectCafe(cafe, starValue)}
+                    >
+                      ★
+                    </span>
                   ))}
                 </div>
               </div>
@@ -119,21 +136,16 @@ const Writereview = () => {
         </div>
       </section>
 
-      <div className="footer-copyright-bar">
-                          <div className="copyright-inner-content">
-            <span className="copyright-text">
-            Copyright © 2024 
-                    </span>
-                  <span className="copyright-brand-name">
-                    Ethio Mesob, Inc.
-                <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
-                </span>
-          
-                <span className="copyright-text">
-                All rights reserved.
-              </span>
-            </div>
-                </div>
+      <footer className="footer-copyright-bar">
+        <div className="copyright-inner-content">
+          <span className="copyright-text">Copyright © 2026</span>
+          <span className="copyright-brand-name">
+            Ethio Mesob, Inc.
+            <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+          </span>
+          <span className="copyright-text">All rights reserved.</span>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -11,6 +11,7 @@ import Reviewpage from "./pages/reviewpage/Reviewpage";
 import Cafepage from "./pages/cafepage/Cafepage";
 import Locationpage from "./pages/locationpage/Locationpage";
 import Businessprofile from "./pages/businessprofile/Businessprofile";
+import Coffeepage from "./pages/coffeepage/Coffeepage";
 
 function App() {
   
@@ -56,6 +57,10 @@ function App() {
     {
       path: "/businessprofile",
       element: <Businessprofile />
+    },
+    {
+      path: "/coffee-page",
+      element: <Coffeepage />
     },
   ])
   return (

@@ -12,12 +12,12 @@ import userPhoto4 from '../../assets/pic-4.jpg';
 import userPhoto5 from '../../assets/pic-5.jpg';
 import userPhoto6 from '../../assets/pic-6.jpg';
 
-import reviewPhoto1 from '../../assets/img-4.jpg';
-import reviewPhoto2 from '../../assets/img-7.jpg';
-import reviewPhoto3 from '../../assets/img-10.jpg';
-import reviewPhoto4 from '../../assets/img-11.jpg';
-import reviewPhoto5 from '../../assets/img-12.jpg';
-import reviewPhoto6 from '../../assets/img-13.jpg';
+import reviewPhoto1 from '../../assets/img-1.jpg';
+import reviewPhoto2 from '../../assets/img-12.jpg';
+import reviewPhoto3 from '../../assets/img-3.jpg';
+import reviewPhoto4 from '../../assets/img-8.jpg';
+import reviewPhoto5 from '../../assets/cafe-2.jpg';
+import reviewPhoto6 from '../../assets/img-5.jpg';
 
 const activities = [
     {

@@ -1,99 +1,103 @@
-import React, { useRef } from 'react';
-import './cafepage.css';
+import React, { useRef } from 'react'
+import './coffeepage.css';
 import logo from '../../assets/logo.png';
 import cafeimg from '../../assets/cafe1-img.jpg';
-import cafeimg2 from '../../assets/cafe-1.jpg';
-import img1 from '../../assets/img-13.jpg';
-import img2 from '../../assets/img-1.jpg';
-import img3 from '../../assets/img-3.jpg';
+import cafeimg2 from '../../assets/cafe-img121.jpg';
+import img1 from '../../assets/img-111.jpg';
+import img2 from '../../assets/img-22.jpg';
+import img3 from '../../assets/img-33.jpg';
+import img33 from '../../assets/img-333.jpg';
 import pic1 from '../../assets/pic-1.jpg';
 import pic2 from '../../assets/pic-2.jpg';
 import pic3 from '../../assets/pic-3.jpg';
-import img5 from '../../assets/img-5.jpg';
-import img6 from '../../assets/img-6.jpg';
+import img5 from '../../assets/img-55.jpg';
+import img6 from '../../assets/img-66.jpg';
 import img7 from '../../assets/img-7.jpg';
-import img9 from '../../assets/img-9.jpg';
-import cafe2 from '../../assets/cafe-2.jpg';
+import img9 from '../../assets/img-99.jpg';
+import img15 from '../../assets/img-15.jpg';
+import img414 from '../../assets/img-414.jpg';
 import { useLocation, Link } from 'react-router-dom';
 
-const Cafepage = () => {
-  const location = useLocation();
-  const menuSliderRef = useRef(null);
-  
-  const scrollMenu = (direction) => {
-    if (menuSliderRef.current) {
-      const { scrollLeft, clientWidth } = menuSliderRef.current;
-      const scrollAmount = clientWidth / 2;
-      const scrollTo = direction === 'left' 
-        ? scrollLeft - scrollAmount 
-        : scrollLeft + scrollAmount;
+const Coffeepage = () => {
+    const location = useLocation();
+      const menuSliderRef = useRef(null);
       
-      menuSliderRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
-    }
-  };
-  
-  const cafe = location.state?.cafeData || { 
+      const scrollMenu = (direction) => {
+        if (menuSliderRef.current) {
+          const { scrollLeft, clientWidth } = menuSliderRef.current;
+          const scrollAmount = clientWidth / 2;
+          const scrollTo = direction === 'left' 
+            ? scrollLeft - scrollAmount 
+            : scrollLeft + scrollAmount;
+          
+          menuSliderRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+        }
+      };
+      
+      const cafe = location.state?.cafeData || { 
     name: "Abyssinia Ethiopian Restaurant", 
     rating: 4.4, 
-    reviews: 472 
+    reviews: 472,
+    city: "Addis Ababa",
+    location: "Bole",
+    image: cafeimg // default image
   };
-
-  const menuCategories = [
-    { name: "Beyaynet", img: img1, price: "$180 ETB" },
-    { name: "Doro wot", img: img2, price: "$180 ETB" },
-    { name: "kitifo", img: img3, price: "$350 ETB" },
-    { name: "Tibis", img: cafe2, price: "$300 ETB" },
-    { name: "Agelgel", img: img9, price: "$200 ETB" },
-    { name: "kitfo", img: img6, price: "$350 ETB" },
-    { name: "gomen", img: img5, price: "$150 ETB" },
-    { name: "Beyaynet", img: img7, price: "$180 ETB" },
-  ];
-
-  const popularDishes = [
-    { name: "Kitifo", price: "$350.00", img: img5 },
-    { name: "Tibis", price: "$300.00", img: cafe2 },
-    { name: "Beyaynet", price: "$180.00", img: img7 },
-  ];
-
-  const reviewsData = [
-    {
-      userImg: pic1,
-      user: "Alana E.",
-      location: "Addis Ababa, ET",
-      status: "Elite 25",
-      stats: { friends: 8, reviews: 123, photos: 94 },
-      rating: 4,
-      date: "Sep 25, 2025",
-      text: "Pulled up for a friend's birthday dinner. The restaurant is located in a strip mall with ample parking and has brightly colored walls and beaded curtains that make it feel very private. Food was delicious - heavier than expected, though well-seasoned and hearty.",
-      dishImg: img1,
-      dishName: "Beyaynet"
-    },
-    {
-      userImg: pic2,
-      user: "Rahmet M.",
-      location: "Qochi, JI",
-      status: "",
-      stats: { friends: 12, reviews: 45, photos: 10 },
-      rating: 5,
-      date: "Dec 2, 2023",
-      text: "The service is excellent, they are always very attentive and the flavors are authentic. Highly recommend the meat combo!",
-      dishImg: img2, 
-      dishName: "Doro Wot"
-    },
-    {
-      userImg: pic3,
-      user: "Siham M.",
-      location: "Goro, ET",
-      status: "Elite 25",
-      stats: { friends: 24, reviews: 89, photos: 150 },
-      rating: 5,
-      date: "Apr 2, 2025",
-      text: "Best Ethiopian spot in the area. The doro wat is perfectly spiced and the injera is always fresh.",
-      dishImg: img3, 
-      dishName: "Kitifo"
-    },
-  ];
-
+    
+      const menuCategories = [
+        { name: "Mocha", img: img1, price: "$150" },
+        { name: "Buna", img: img15, price: "$50" },
+        { name: "Americano", img: img3, price: "$100" },
+        { name: "Black coffee", img: img33, price: "$70" },
+        { name: "Latte", img: img9, price: "$130" },
+        { name: "Espresso", img: img6, price: "$200" },
+        { name: "Cappuccino", img: img5, price: "$150" },
+        { name: "Macchiato", img: img414, price: "$150" },
+      ];
+    
+      const popularDishes = [
+        { name: "Buna", price: "$50", img: img15 },
+        { name: "Americano", price: "$100", img: img3 },
+        { name: "Latte", price: "$130", img: img9 },
+      ];
+    
+      const reviewsData = [
+        {
+          userImg: pic1,
+          user: "Alana E.",
+          location: "Addis Ababa, ET",
+          status: "Elite 25",
+          stats: { friends: 8, reviews: 123, photos: 94 },
+          rating: 4,
+          date: "Sep 25, 2025",
+          text: "Best spot in Jimma for a quick caffeine fix. The spriss was amazing, and the staff is incredibly fast. They serve it with fresh popcorn which was a nice touch. Perfect place to sit and people-watch near the mosque.",
+          dishImg: img15,
+          dishName: "Beyaynet"
+        },
+        {
+          userImg: pic2,
+          user: "Rahmet M.",
+          location: "Qochi, JI",
+          status: "",
+          stats: { friends: 12, reviews: 45, photos: 10 },
+          rating: 5,
+          date: "Dec 2, 2023",
+          text: "A very authentic atmosphere. It’s a bit crowded during the afternoons, but the quality of the beans is undeniable. You can tell they roast them fresh every morning. Great place to bring friends for a long chat.",
+          dishImg: img2, 
+          dishName: "Doro Wot"
+        },
+        {
+          userImg: pic3,
+          user: "Siham M.",
+          location: "Goro, ET",
+          status: "Elite 25",
+          stats: { friends: 24, reviews: 89, photos: 150 },
+          rating: 5,
+          date: "Apr 2, 2025",
+          text: "The aroma of roasting beans hits you before you even walk in. I loved the traditional setup with the grass on the floor and the frankincense burning. The macchiato was perfectly layered and strong—exactly how I like it!",
+          dishImg: img3, 
+          dishName: "Kitifo"
+        },
+      ];
   return (
     <div className="profile-page">
       {/* NAVBAR */}
@@ -118,9 +122,9 @@ const Cafepage = () => {
       {/* PHOTO GALLERY */}
       <div className="photo-banner">
         <div className="photo-grid">
-          <img src={img9} alt="Interior" className="banner-img" />
-          <img src={cafeimg} alt="Food" className="banner-img main-focus" />
-          <img src={img6} alt="Outside" className="banner-img" />
+          <img src={img33} alt="Interior" className="banner-img" />
+          <img src={cafeimg2} alt="Food" className="banner-img main-focus" />
+          <img src={img2} alt="Outside" className="banner-img" />
         </div>
         
         <div className="business-header-info">
@@ -290,7 +294,7 @@ const Cafepage = () => {
       </div>
       <div className="footer-copyright-bar">
                                   <div className="copyright-inner-content">
-                                          <span className="copyright-text">
+                                        <span className="copyright-text">
                               Copyright © 2024 
                           </span>
                           
@@ -305,7 +309,7 @@ const Cafepage = () => {
                                       </div>
                                   </div>
     </div>
-  );
-};
+  )
+}
 
-export default Cafepage;
+export default Coffeepage
