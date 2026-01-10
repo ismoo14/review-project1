@@ -44,7 +44,7 @@
 /* Results Layout */
 .results-container {
     display: flex;
-    align-items: flex-start; /* CRITICAL: Prevents the map from stretching to full height */
+    align-items: flex-start; 
     gap: 20px;
     padding: 20px;
 }
@@ -135,17 +135,15 @@
 /* Mobile/Large Phone Size (768px and below) */
 @media (max-width: 768px) {
     .results-container {
-        flex-direction: column; /* Stack Map and List */
+        flex-direction: column; 
         padding: 10px;
     }
-
-    /* 1. Move Map to the top and give it a fixed height on mobile */
     .map-side {
         width: 100%;
-        height: 250px; /* Smaller fixed height for mobile */
-        position: relative; /* Remove sticky on mobile */
+        height: 250px; 
+        position: relative; 
         top: 0;
-        order: -1; /* This puts the map ABOVE the list */
+        order: -1; 
         margin-bottom: 20px;
     }
 
@@ -188,8 +186,6 @@
     }
 }
 
-
-
 .copyright-inner-content {
     display: flex;
     align-items: center; 
@@ -214,6 +210,7 @@
 
 .footer-copyright-bar {
     text-align: center; 
+    margin-top: -30px;
 }
 .copyright-text {
     font-size: 12px;

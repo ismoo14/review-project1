@@ -26,7 +26,6 @@ import img99 from '../../assets/img-9.jpg';
 import cafeimg from '../../assets/cafe1-img.jpg';
 
 const Businessprofile = () => {
-  // 1. Navigation & UI State
 const [activeTab, setActiveTab] = useState('reviews');
 const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -74,10 +73,10 @@ const [reviews] = useState([
 const [menuItems, setMenuItems] = useState([
     { id: 1, name: "Special Kitfo", price: "450 ETB", cat: "Beef", status: "In Stock", img: img3 },
     { id: 2, name: "Beyaynet", price: "320 ETB", cat: "Vegan", status: "In Stock", img: img1 },
-    { id: 3, name: "Doro Wat", price: "550 ETB", cat: "Poultry", status: "Out of Stock", img: img2 },
-    { id: 4, name: "Gomen", price: "150 ETB", cat: "Beef", status: "In Stock", img: img55 },
-    { id: 5, name: "kitfo", price: "350 ETB", cat: "Vegan", status: "In Stock", img: img66 },
-    { id: 6, name: "Agelgel", price: "200 ETB", cat: "Poultry", status: "Out of Stock", img: img99 },
+    { id: 3, name: "Doro Wat", price: "550 ETB", cat: "Beef", status: "Out of Stock", img: img2 },
+    { id: 4, name: "Gomen", price: "150 ETB", cat: "Vegan", status: "In Stock", img: img55 },
+    { id: 5, name: "kitfo", price: "350 ETB", cat: "Beef", status: "In Stock", img: img66 },
+    { id: 6, name: "Agelgel", price: "200 ETB", cat: "Vegan", status: "Out of Stock", img: img99 },
 ]);
 
   // 5. State for "New Dish" Form

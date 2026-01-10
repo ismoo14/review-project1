@@ -17,7 +17,7 @@ const Writereview = () => {
 
   // Updated cafes data with unique images
   const cafes = [
-    { id: 1, name: "Abyssinia Ethiopian Restaurant", location: "Addis Ababa, ET", image: img1 },
+    { id: 1, name: "Abyssinia Ethiopian Restaurant", location: "jimma, mercato", image: img1 },
     { id: 2, name: "Tomoca Coffee", location: "Addis Ababa, Ethiopia", image: img2 },
     { id: 3, name: "Kategna Ethio-Cuisine", location: "Jimma, OR", image: img3 },
     { id: 4, name: "Yod Abyssinia", location: "Adama, OR", image: img4 },
@@ -67,7 +67,7 @@ const Writereview = () => {
                 <div className="input-box business-box">
                   <input
                     type="text"
-                    placeholder="Try lunch, yoga studio, plumber"
+                    placeholder="cafe, coffee house"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />

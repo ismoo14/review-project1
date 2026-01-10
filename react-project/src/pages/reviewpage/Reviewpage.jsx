@@ -4,6 +4,7 @@ import './reviewpage.css'
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import bussimg from '../..//assets/img-4.jpg'
+import cafeimg from '../../assets/cafe1-img.jpg';
 
 
 const Reviewpage = () => {
@@ -108,7 +109,7 @@ const handleImageChange = (e) => {
     {/* LEFT SIDE: THE FORM */}
     <div className="review-main">
       <div className="cafe-header">
-        <img src={bussimg} alt="Cafe Logo" className="cafe-icon" />
+        <img src={cafeimg} alt="Cafe Logo" className="cafe-icon" />
         <div className="cafe-title-info">
           <h1>{cafe.name}</h1>
           <p>{cafe.location}</p>
@@ -142,7 +143,7 @@ const handleImageChange = (e) => {
         <h3 className="section-title">Tell us about your experience</h3>
         <p className="subtitle">A few things to consider in your review</p>
         <div className="tags">
-          <span>Food</span> <span>Service</span> <span>Ambiance</span>
+          <span>Food</span> <span>Service</span> <span>vibe</span>
         </div>
         <div className="review-upload-container">
   <label htmlFor="food-upload" className="image-upload-box">
@@ -172,9 +173,9 @@ const handleImageChange = (e) => {
           onChange={(e) => setReviewText(e.target.value)}
         />
         <div className="textarea-footer">
-          <p className={`min-chars ${reviewText.length >= 75 ? 'success' : ''}`}>
-            {reviewText.length < 75 
-              ? `Reviews need to be at least 75 characters. You need ${75 - reviewText.length} more.` 
+          <p className={`min-chars ${reviewText.length >= 55 ? 'success' : ''}`}>
+            {reviewText.length < 55 
+              ? `Reviews need to be at least 55 characters. You need ${55 - reviewText.length} more.` 
               : "Minimum length reached!"}
           </p>
         </div>
@@ -182,7 +183,7 @@ const handleImageChange = (e) => {
 
       <button 
         className="post-btn" 
-        disabled={rating === 0 || reviewText.length < 75}
+        disabled={rating === 0 || reviewText.length < 55}
       >
         Post Review
       </button>

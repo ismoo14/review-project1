@@ -4,11 +4,11 @@
     position: absolute; /* Sits on top of the content */
     top: 0;
     left: 0;
-    background-color: transparent; /* Makes it see-through */
-    border-bottom: none; /* Removes the line */
+    background-color: transparent; 
+    border-bottom: none;
     z-index: 1000; 
     padding: 20px 0; 
-    transition: background-color 0.3s ease; /* Smooth transition if you decide to change color on scroll */
+    transition: background-color 0.3s ease; 
 }
 
 .container {
@@ -113,7 +113,9 @@
     border: 1px solid #0073bb; 
 }
 
-.write button:hover { background-color: #f2f7fb; }
+.write button:hover { 
+    background-color: #f2f7fb; 
+}
 
 .login button {
     background-color: green; 
@@ -181,7 +183,7 @@
 }
 
 .dropdown-btn.active {
-    color: #008000; /* Ethio Mesob Green */
+    color: #008000; 
 }
 
 /* --- The Animated Arrow --- */
@@ -204,13 +206,11 @@
     background: #ffffff;
     min-width: 240px;
     border-radius: 12px;
-    /* Soft elevation shadow */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 
                 0 4px 10px rgba(0, 0, 0, 0.05);
     padding: 8px;
     z-index: 2000;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    /* Entrance Animation */
     animation: slideIn 0.3s ease-out;
 }
 
@@ -246,7 +246,7 @@
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    color: #6a1b9a; /* Purple color from your screenshot */
+    color: #6a1b9a; 
     transition: transform 0.2s ease;
 }
 
@@ -282,17 +282,15 @@
 }
 
 @media (max-width: 850px) {
-    /* Show Hamburger */
     .hamburger { display: flex; }
 
-    /* Hide Search on Mobile Header */
     .form { display: none; }
 
     /* Transform Right Content into Sliding Sidebar */
     .nav-right-content {
         position: fixed;
         top: 0;
-        right: -100%; /* Hidden */
+        right: -100%; 
         width: 280px;
         height: 100vh;
         background-color: white;
@@ -306,7 +304,7 @@
     }
 
     .nav-right-content.open {
-        right: 0; /* Slide In */
+        right: 0; 
     }
 
     .nav-right-content > div, 

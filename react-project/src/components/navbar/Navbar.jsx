@@ -47,10 +47,9 @@ const Navbar = () => {
     } else if (term === "cafe") {
         filterType = "Cafe";
     } else {
-        filterType = searchTerm; // Fallback for other searches
+        filterType = searchTerm; 
     }
 
-    // Navigate to location page with the specific description
     navigate(`/locationpage?find_desc=${encodeURIComponent(filterType)}&find_loc=${encodeURIComponent(loc)}`);
     setIsMenuOpen(false);
 };
@@ -58,7 +57,6 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className="container">
-                {/* LOGO */}
                 <div className="logo">
                     <Link to="/">
                         <img src={logo} alt="Logo" />

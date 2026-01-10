@@ -37,10 +37,8 @@ const Imageslider = () => {
     }, [totalImages]);
 return (
     <div className="slider-container">
-            {/* OVERLAY CONTENT */}
             <div className="hero-text-overlay">
-                
-                {/* TOP ROW: Loader + Phrase */}
+
                 <div className="hero-top-layout">
                     <div className="hero-loader">
                         {phrases.map((_, index) => (

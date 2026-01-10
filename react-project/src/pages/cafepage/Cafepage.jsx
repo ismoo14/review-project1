@@ -201,13 +201,10 @@ const Cafepage = () => {
           </div>
 
           <hr className="section-divider" />
-
-          {/* SECTION 3: REVIEWS - REFRESHED FOR RESPONSIVENESS */}
           <div className="reviews-container">
             <h3>Recommended Reviews</h3>
             {reviewsData.map((review, index) => (
               <div className="review-card" key={index}>
-                {/* Sidebar with Profile Header wrapper */}
                 <div className="review-sidebar">
                   <div className="user-profile-header">
                     {review.userImg ? (
@@ -268,18 +265,18 @@ const Cafepage = () => {
               <div className="contact-details">
                 <div className="contact-item">
                   <a href="http://www.abyssiniasacramento.com/" target="_blank" rel="noreferrer">
-                    abyssiniasacramento.com
+                    abyssiniacafe.com
                   </a>
                   <span className="icon">🔗</span>
                 </div>
                 <div className="contact-item">
-                  <span>(916) 481-1580</span>
+                  <span>+251991719308</span>
                   <span className="icon">📞</span>
                 </div>
                 <div className="contact-item directions">
                   <div>
                     <strong>Get Directions</strong>
-                    <p>1346 Fulton Ave, Sacramento, CA 95825</p>
+                    <p>jimma, mercato</p>
                   </div>
                   <span className="icon">📍</span>
                 </div>

@@ -27,9 +27,9 @@ body, html {
     z-index: 30; 
     padding-left: 50px; 
     display: flex;
-    flex-direction: column; /* This pushes the search-cta BELOW the top-layout */
+    flex-direction: column;
     align-items: flex-start; 
-    gap: 40px; /* Space between the text and the button */
+    gap: 40px; 
 }
 
 /* Keeps Loader and Text side-by-side */
@@ -62,7 +62,7 @@ body, html {
 
 .loader-line {
     border-radius: 20px;
-    width: 16px; /* Thinner lines look more modern */
+    width: 16px; 
     height: 52px; 
     background-color: white;
     transition: all 0.3s ease;
@@ -70,7 +70,7 @@ body, html {
 }
 
 .loader-line.active {
-    background-color: #008000; /* Solid Green */
+    background-color: #008000; 
     width: 14px;
 }
 

@@ -24,7 +24,6 @@
 /* --- Grid Layout for Cards --- */
 .activity-grid {
     display: grid;
-    /* This 'repeat' logic is better for responsiveness */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     gap: 30px;
 }
@@ -95,7 +94,7 @@
 /* --- Corrected Star Rating Styling --- */
 .star-rating1 {
     display: flex;
-    gap: 2px; /* Small gap between stars */
+    gap: 2px; 
     align-items: center;
 }
 
@@ -106,19 +105,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Default filled star color (Red like your 2nd screenshot) */
     background-color: rgb(233, 152, 3); 
-    color: white !important; /* Makes the star symbol white */
+    color: white !important;
 }
 
 
 
 .star-rating1 .star-icon.empty {
-    background-color: #e0e0e0; /* Grey for empty stars */
+    background-color: #e0e0e0; 
     color: white !important;
 }
 
-/* Adjustment for the meta line to align text */
 .business-meta-line {
     display: flex;
     align-items: center;
@@ -199,7 +196,7 @@
     }
 
     .activity-grid {
-        grid-template-columns: 1fr; /* Single column on phones */
+        grid-template-columns: 1fr; 
     }
 
     .activity-section-title {
@@ -208,15 +205,13 @@
     }
 
     .activity-card {
-        padding: 20px; /* More breathing room on mobile */
+        padding: 20px; 
     }
 
     .review-photo {
-        height: 180px; /* Slightly taller photos look better on mobile */
+        height: 180px; 
     }
 }
-
-/* Hover effects for a better feel */
 .activity-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

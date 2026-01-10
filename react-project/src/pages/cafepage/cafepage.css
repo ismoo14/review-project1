@@ -111,8 +111,6 @@
   font-weight: bold; 
   margin-right: 5px; 
 }
-
-/* --- ACTION BAR --- */
 .action-bar {
   max-width: 1200px;
   margin: 20px auto;
@@ -147,8 +145,6 @@
   font-weight: 600;
   cursor: pointer;
 }
-
-/* --- MAIN LAYOUT --- */
 .main-content-container {
   max-width: 1270px;
   margin: 40px auto;
@@ -158,36 +154,28 @@
   align-items: flex-start; 
 }
 
-/* Left column */
 .left-column {
   flex: 1;
   min-width: 0;
 }
 
-/* Right column */
 .right-column {
   width: 350px;
   flex-shrink: 0;
   align-self: flex-start; 
 }
-
-/* THE STICKY ELEMENT - apply directly to the location card or a wrapper */
 .location-card.tall-card {
   position: sticky;
   top: 110px; 
   z-index: 40;
   align-self: flex-start; 
 }
-
-/* Optional: subtle shadow when stuck */
 .location-card.tall-card {
   transition: box-shadow 0.3s ease;
 }
 .location-card.tall-card.stuck {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-/* --- SECTION 1: CLICKABLE MENU (MANUAL) --- */
 .clickable-menu-wrapper {
   position: relative;
   width: 100%;
@@ -201,12 +189,12 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   padding: 10px 0;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; 
   -ms-overflow-style: none;
 }
 
 .clickable-viewport::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none; 
 }
 
 .clickable-track {
@@ -217,7 +205,7 @@
 }
 
 .menu-cat-card {
-  position: relative; /* Essential for positioning the price badge */
+  position: relative; 
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -247,16 +235,15 @@
 
 .slider-nav-btn {
   position: absolute;
-  top: 42%; /* Centered vertically */
+  top: 42%; 
   transform: translateY(-50%);
   width: 42px;
   height: 42px;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly stronger shadow */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
   cursor: pointer;
-  /* High z-index to stay above images */
   z-index: 20; 
   display: flex;
   align-items: center;
@@ -281,8 +268,6 @@
   border-top: 1px solid #eee; 
   margin: 40px 0; 
 }
-
-/* --- SECTION 2: POPULAR DISHES (AUTO-SLIDE) --- */
 .auto-slider-wrapper { 
   position: relative; 
   width: 100%; 
@@ -337,8 +322,6 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - 8px)); }
 }
-
-/* --- SECTION 3: REVIEWS (NEW) --- */
 .reviews-container { 
   margin-top: 20px;
 }
@@ -354,12 +337,12 @@
   flex-shrink: 0; 
 }
 .user-avatar-img, .user-avatar-placeholder {
-  width: 50px; /* Slightly smaller avatar */
+  width: 50px; 
   height: 50px;
   border-radius: 4px;
 }
 .user-name { 
-  font-size: 14px; /* Slightly smaller font */
+  font-size: 14px;
   line-height: 1.2;
 }
 .elite-tag { 
@@ -435,8 +418,6 @@
   font-size: 13px; 
   font-weight: bold; 
 }
-
-/* --- RIGHT COLUMN (STICKY MAP) --- */
 .location-card.tall-card .contact-details {
   padding: 25px 10px;
   display: flex;
@@ -505,7 +486,7 @@
   }
 
   .banner-img {
-    width: 100%; /* Focused image takes full width */
+    width: 100%; 
   }
 
   .business-header-info {
@@ -531,20 +512,20 @@
   }
   
   .category-text {
-    display: block; /* Wraps long text on very small screens */
+    display: block; 
     width: 100%;
   }
 }
 
 @media (max-width: 1024px) {
   .main-content-container {
-    flex-direction: column; /* Stacks columns on tablets/phones */
+    flex-direction: column; 
     gap: 20px;
   }
 
   .right-column {
-    width: 100%; /* Map takes full width on mobile */
-    order: 2; /* Ensures map is below the menu */
+    width: 100%; 
+    order: 2; 
   }
 
   .left-column {
@@ -552,18 +533,18 @@
   }
 
   .location-card.tall-card {
-    position: relative; /* Removes sticky on mobile */
+    position: relative; 
     top: 0;
   }
 
   .responsive-iframe {
-    height: 300px; /* Shorter map on mobile */
+    height: 300px; 
   }
 }
 
 @media (max-width: 600px) {
   .menu-cat-card {
-    width: 160px; /* Smaller cards for small screens */
+    width: 160px;
   }
   
   .menu-cat-card img {
@@ -580,7 +561,6 @@
     font-size: 14px;
   }
 
-  /* Make nav buttons less intrusive on mobile */
   .prev { left: -10px; }
   .next { right: -10px; }
 }
@@ -592,40 +572,30 @@
 
 
 @media (max-width: 1024px) {
-  /* Bring buttons slightly inside so they don't hit the screen edge */
   .prev { left: 0; }
   .next { right: 0; }
 }
 
 @media (max-width: 768px) {
-  /* 1. The Container: Needs overflow and padding */
   .clickable-viewport {
     display: flex;
     overflow-x: auto; 
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide for Firefox */
-    -ms-overflow-style: none; /* Hide for IE/Edge */
-    
-    /* This creates the space on the left/right of the scrolling area */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
     padding: 0 15px; 
   }
-
-  /* Hide scrollbar for Chrome/Safari */
   .clickable-viewport::-webkit-scrollbar {
     display: none;
   }
 
-  /* 2. The Track: Needs to ensure it doesn't collapse the padding */
   .clickable-track {
     display: flex;
     gap: 15px;
-    /* This ensures the last item has space on the right after scrolling */
     padding-right: 15px; 
   }
-
-  /* 3. The Cards: Fixed width so they don't shrink */
   .menu-cat-card {
-    flex: 0 0 160px; /* Don't grow, don't shrink, stay 160px */
+    flex: 0 0 160px; 
     width: 160px;
     text-align: center;
   }
@@ -634,7 +604,7 @@
     width: 100%;
     height: 110px;
     object-fit: cover;
-    border-radius: 12px; /* Matches the rounded look in your screenshots */
+    border-radius: 12px; 
   }
 
   .menu-cat-card h3 {
@@ -643,7 +613,6 @@
     font-weight: 600;
   }
 
-  /* Keep buttons hidden as swiping is better for this layout */
   .slider-nav-btn {
     display: none; 
   }
@@ -661,7 +630,7 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .review-card {
-    flex-direction: column; /* Stack vertically on mobile */
+    flex-direction: column; 
     gap: 12px;
     padding: 20px 0;
   }
@@ -671,13 +640,13 @@
   }
 
   .user-profile-header {
-    flex-direction: row; /* Avatar next to text on mobile */
+    flex-direction: row; 
     align-items: center;
     gap: 15px;
   }
 
   .review-photo-attachment {
-    max-width: 100%; /* Photos take full width on phones */
+    max-width: 100%; 
   }
 }
 
@@ -685,7 +654,7 @@
 
 @media (max-width: 768px) {
   .review-card {
-    flex-direction: column; /* Stack vertically on mobile */
+    flex-direction: column; 
     gap: 12px;
     padding: 20px 0;
   }
@@ -695,19 +664,19 @@
   }
 
   .user-profile-header {
-    flex-direction: row; /* Avatar next to text on mobile */
+    flex-direction: row; 
     align-items: center;
     gap: 15px;
   }
 
   .review-photo-attachment {
-    max-width: 100%; /* Photos take full width on phones */
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .user-stats {
-    flex-wrap: wrap; /* Prevent stats from clipping on tiny screens */
+    flex-wrap: wrap; 
   }
   
   .review-rating-row {

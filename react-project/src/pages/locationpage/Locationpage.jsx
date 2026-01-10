@@ -9,16 +9,22 @@ import img14 from '../../assets/img-14.jpg';
 import img15 from '../../assets/img-15.jpg';
 import img10 from '../../assets/img-10.jpg';
 import cafe1 from '../../assets/cafe1-img.jpg';
+import cafe2 from '../../assets/cafe-2.jpg';
+import img9 from '../../assets/img-9.jpg';
 
 // Sample data
 const cafes = [
     { id: 1, name: "Abyssinia Ethiopian cafe", city: "Jimma", location: "mercato", rating: 4.4, reviews: 472, image: cafe1 },
-    { id: 2, name: "Hidya coffee House", city: "jimma", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: img15 },
-    { id: 3, name: "Tomoca Coffee House", city: "Addis Ababa", location: "summit", rating: 4.8, reviews: 120, image: img10 },
+    { id: 2, name: "Hidya coffee House", city: "jimma", location: "qochi", rating: 4.4, reviews: 472, image: img15 },
+    { id: 3, name: "Tomoca Coffee House", city: "jimma", location: "mercato", rating: 4.8, reviews: 120, image: img10 },
     { id: 4, name: "Aba jiffar Traditional Coffee House", city: "jimma", location: "qochi", rating: 4.2, reviews: 85, image: img11 },
-    { id: 5, name: "Capital One Café", city: "Addis Ababa", location: "ayat", rating: 4.0, reviews: 310, image: img3 },
-    { id: 6, name: "1-LOVE cafe", city: "jimma", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: img1 },
-    { id: 7, name: "Friends coffee House", city: "jimma", location: "Near Grand Mosque", rating: 4.4, reviews: 472, image: img14 },
+    { id: 5, name: "Capital One Café", city: "jimma", location: "saris", rating: 4.0, reviews: 310, image: img3 },
+    { id: 6, name: "1-LOVE cafe", city: "jimma", location: "mercato", rating: 4.4, reviews: 472, image: img1 },
+    { id: 7, name: "Qochi cafe", city: "jimma", location: "menafesha", rating: 4.4, reviews: 472, image: img9 },
+    { id: 8, name: "ismo cafe", city: "jimma", location: "qochi", rating: 4.4, reviews: 472, image: cafe2 },
+    { id: 9, name: "kaldis coffee House", city: "jimma", location: "arat-anbesa", rating: 4.4, reviews: 472, image: img10 },
+    { id: 10, name: "naruto coffee House", city: "jimma", location: "menafesha", rating: 4.4, reviews: 472, image: img15 },
+
 ];
 
 const Locationpage = () => {
@@ -29,11 +35,9 @@ const Locationpage = () => {
     const locationQuery = searchParams.get("find_loc")?.toLowerCase().trim() || "";
 
     // --- TYPO CORRECTION / NORMALIZATION ---
-    // This function catches common typos and treats them as the correct word
     const getNormalizedQuery = (query) => {
         // Regex matches: cofe, cofee, coffe, coffee
         if (/^cof+ee?$/.test(query)) return "coffee";
-        // Matches: caf, cafee, cafe
         if (query === "caf" || query === "cafee") return "cafe";
         return query;
     };
@@ -48,7 +52,6 @@ const Locationpage = () => {
 
         let matchesCategory = true; 
         if (descQuery !== "") {
-            // Check for normalized keywords
             if (descQuery === "coffee") {
                 matchesCategory = name.includes("coffee");
             } else if (descQuery === "cafe" || descQuery === "café") {
@@ -102,7 +105,6 @@ const Locationpage = () => {
                 </div>
             </nav>
 
-            {/* --- CONTENT AREA --- */}
             <div className="results-container">
                 {/* LEFT SIDE: LIST */}
                 <div className="list-side">
@@ -111,7 +113,7 @@ const Locationpage = () => {
                     <div className="cafe-list">
                         {filteredCafes.map(cafe => {
                             const isCoffee = cafe.name.toLowerCase().includes("coffee");
-                            // Logic to navigate to specific page
+
                             const destination = isCoffee ? "/coffee-page" : "/cafe-page";
 
                             return (

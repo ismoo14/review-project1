@@ -6,7 +6,6 @@ import illust from '../../assets/login-img.jpg'
 const Signin = () => {
   return (
     <div className="signup-page-container">
-      {/* Top Header with Logo */}
       <header className="login-header-simple">
         <div className="header-container">
           <Link to="/" className="logo-container">
@@ -29,7 +28,6 @@ const Signin = () => {
           </div>
 
           <form className="signup-form">
-            {/* Row for First and Last Name */}
             <div className="name-row">
               <input type="text" placeholder="First Name" className="form-input" />
               <input type="text" placeholder="Last Name" className="form-input" />
@@ -37,6 +35,7 @@ const Signin = () => {
             
             <input type="email" placeholder="Email" className="form-input" />
             <input type="password" placeholder="Password" className="form-input" />
+            <input type="Fayda num" placeholder="Fayda Number" className="form-input" />
             
             <button type="submit" className="signup-submit-btn">Sign Up</button>
           </form>
@@ -58,21 +57,21 @@ const Signin = () => {
 
       </div>
       <div className="footer-copyright-bar">
-                                                    <div className="copyright-inner-content">
-                                                            <span className="copyright-text">
-                                                Copyright © 2024 
-                                            </span>
+                <div className="copyright-inner-content">
+                <span className="copyright-text">
+                    Copyright © 2024 
+                </span>
                                             
-                                            <span className="copyright-brand-name">
-                                                Ethio Mesob, Inc.
-                                                <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
-                                            </span>
+                  <span className="copyright-brand-name">
+                      Ethio Mesob, Inc.
+                  <img src={logo} alt="Ethio Mesob Logo" className="footer-logo" />
+                  </span>
                                     
-                                            <span className="copyright-text">
-                                                All rights reserved.
-                                            </span>
-                                                        </div>
-                                                    </div>
+                <span className="copyright-text">
+                    All rights reserved.
+                  </span>
+                </div>
+              </div>
     </div>
   )
 }
